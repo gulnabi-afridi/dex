@@ -1,7 +1,19 @@
-import React from "react";
+import React, { ReactNode } from "react";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
-const Layout = () => {
-  return <div>Layout</div>;
+interface props {
+  children: ReactNode;
+}
+
+const Layout = ({ children }: props) => {
+  return (
+    <React.Fragment>
+      <Header />
+      {children}
+      <Footer />
+    </React.Fragment>
+  );
 };
 
 export default Layout;
