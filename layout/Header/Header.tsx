@@ -2,6 +2,8 @@ import React from "react";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapepr";
 import Image from "next/image";
 import Link from "next/link";
+import OutlineButton from "@/components/shared/Buttons/OutlineButton";
+import { BsLightningCharge } from "react-icons/bs";
 
 const Header = () => {
   return (
@@ -17,7 +19,7 @@ const Header = () => {
           />
         </div>
         {/* links */}
-        <div className="flex justify-center items-center gap-10">
+        <div className="flex justify-center items-center gap-12">
           {links.map((item, index) => {
             return (
               <Link
@@ -34,6 +36,13 @@ const Header = () => {
             );
           })}
         </div>
+        {/* button */}
+        <OutlineButton
+          text="Launch app"
+          isIcon={true}
+          style="w-[140px] h-[44px] border-white hover:text-primary hover:border-primary group"
+          icon=<BsLightningCharge className="text-[20px] text-white-main group-hover:text-primary" />
+        />
       </div>
     </Wrapper>
   );
