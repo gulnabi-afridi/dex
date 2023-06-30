@@ -29,6 +29,7 @@ module.exports = {
         },
         black: {
           main: "#000000",
+          off: "#1c2222",
         },
       },
     },
