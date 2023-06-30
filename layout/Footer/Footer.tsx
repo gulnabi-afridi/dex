@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <Wrapper>
+    <Wrapper style="bg-black-cool py-8">
       <div className="w-full grid lg:gap-0 gap-10 grid-cols-1 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 sm:p-0 p-4">
         {/* 1st col */}
         <div className="col-span-1 sm:col-span-2 gap-3 w-full flex flex-col items-start">
