@@ -6,9 +6,9 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <Wrapper>
-      <div className="w-full grid grid-cols-6">
+      <div className="w-full grid lg:gap-0 gap-10 grid-cols-1 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 sm:p-0 p-4">
         {/* 1st col */}
-        <div className="col-span-2 gap-3 w-full flex flex-col items-start">
+        <div className="col-span-1 sm:col-span-2 gap-3 w-full flex flex-col items-start">
           {/* logo */}
           <Link href="/" className="w-[140px] h-[60px] relative">
             <Image
@@ -27,10 +27,13 @@ const Footer = () => {
         </div>
         {footerData.map((item, index) => {
           return (
-            <div key={index} className="flex flex-col gap-3 items-start ">
+            <div
+              key={index}
+              className="flex flex-col gap-2 sm:gap-3 items-start "
+            >
               {/* type */}
-              <p className="text-[16px] font-inter font-semibold text-white-main">
-                Products
+              <p className="text-[16px] font-inter mb-2 sm:mb-0 font-semibold text-white-main">
+                {item.type}
               </p>
               {/* links */}
               {item.links.map((item, index) => {
