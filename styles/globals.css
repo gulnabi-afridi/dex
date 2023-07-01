@@ -49,7 +49,6 @@ select {
 }
 html {
   box-sizing: border-box;
-  background-color: black;
 }
 *,
 *::before,
@@ -59,4 +58,33 @@ html {
 
 iframe {
   border: 0;
+}
+
+.root {
+  --brand: theme("colors.dark-theme.brand.primary");
+  --brand-secondary: theme("colors.light-theme.brand.secondary");
+  --hover: theme("colors.dark-theme.hover");
+  --bkg-1: theme("colors.dark-theme.bkg-1");
+  --bkg-2: theme("colors.dark-theme.bkg-2");
+  --bkg-3: theme("colors.dark-theme.bkg-3");
+  --bkg-4: theme("colors.dark-theme.bkg-4");
+}
+/* dark theme */
+[data-theme="dark-theme"] {
+  --brand: theme("colors.dark-theme.brand.primary");
+  --brand-secondary: theme("colors.light-theme.brand.secondary");
+  --hover: theme("colors.dark-theme.hover");
+  --bkg-1: theme("colors.dark-theme.bkg-1");
+  --bkg-2: theme("colors.dark-theme.bkg-2");
+  --bkg-3: theme("colors.dark-theme.bkg-3");
+  --bkg-4: theme("colors.dark-theme.bkg-4");
+}
+/* light theme */
+[data-theme="light-theme"] {
+  --brand: theme("colors.light-theme.brand.primary");
+  --brand-secondary: theme("colors.light-theme.brand.secondary");
+  --bkg-1: theme("colors.light-theme.bkg-1");
+  --bkg-2: theme("colors.light-theme.bkg-2");
+  --bkg-3: theme("colors.light-theme.bkg-3");
+  --bkg-4: theme("colors.light-theme.bkg-4");
 }

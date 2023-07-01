@@ -1,12 +1,20 @@
+import React, { useState } from "react";
 import "@/styles/globals.css";
 import "@/styles/drawer.css";
 import type { AppProps } from "next/app";
 import Layout from "@/layout/Layout";
+import { ThemeProvider } from "next-themes";
+
+import { createGlobalStyle } from "styled-components";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <React.Fragment>
+      <ThemeProvider defaultTheme="dark-theme">
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </React.Fragment>
   );
 }

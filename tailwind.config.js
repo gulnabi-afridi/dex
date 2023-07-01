@@ -23,15 +23,37 @@ module.exports = {
         xl: "1280px",
       },
       colors: {
-        primary: "#FFAB5C",
-        white: {
-          main: "#ffffff",
+        "dark-theme": {
+          brand: {
+            primary: "#ffffff",
+            secondary: "#FFAB5C",
+          },
+          hover: "#FFAB5C",
+          "bkg-1": "#ffffff",
+          "bkg-2": "#000000",
+          "bkg-3": "#1c2222",
+          "bkg-4": "#090B0B",
         },
-        black: {
-          main: "#000000",
-          off: "#1c2222",
-          cool: "#090B0B",
+        "light-theme": {
+          brand: {
+            primary: "#000000",
+            secondary: "#FFAB5C",
+          },
+          hover: "#FFAB5C",
+          "bkg-1": "#ffffff",
+          "bkg-2": "#ffffff",
+          "bkg-3": "#1c2222",
+          "bkg-4": "#090B0B",
         },
+
+        // ==============================================================
+        "th-bkg-1": "var(--bkg-1)",
+        "th-bkg-2": "var(--bkg-2)",
+        "th-bkg-3": "var(--bkg-3)",
+        "th-bkg-4": "var(--bkg-4)",
+        "th-brand": "var(--brand)",
+        "th-brand-secondary": "var(--brand-secondary)",
+        "th-hover": "var(--hover)",
       },
     },
   },

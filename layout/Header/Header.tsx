@@ -16,7 +16,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Wrapper>
+    <Wrapper style="bg-th-bkg-2">
       <div className="w-full h-[100px] flex justify-between items-center">
         {/* logo */}
         <div className="w-[140px] h-[60px] relative">
@@ -34,12 +34,12 @@ const Header = () => {
               <Link
                 key={index}
                 href={item.path}
-                className="text-white-main hover:text-primary capitalize text-[16px] font-inter relative"
+                className=" capitalize text-th-brand hover:text-th-hover text-[16px] font-inter relative"
               >
                 {item.name}
                 {/* dot */}
                 {item.dot && (
-                  <div className="w-[7px] h-[7px] bg-primary absolute rounded-full top-0 -right-2"></div>
+                  <div className="w-[7px] h-[7px] bg-th-brand-secondary absolute rounded-full top-0 -right-2"></div>
                 )}
               </Link>
             );
@@ -49,8 +49,8 @@ const Header = () => {
         <OutlineButton
           text="Launch app"
           isIcon={true}
-          style="w-[140px] h-[44px] border-white hover:text-primary hover:border-primary group hidden lg:flex"
-          icon=<BsLightningCharge className="text-[20px] text-white-main group-hover:text-primary" />
+          style="w-[140px] h-[44px] border-brand text-th-brand hover:text-th-hover hover:border-th-hover group hidden lg:flex"
+          icon=<BsLightningCharge className="text-[20px] text-th-secondary group-hover:text-primary" />
         />
 
         {/* ====> hamburger + drawer for small screen */}
@@ -84,15 +84,15 @@ const Header = () => {
                   </div>
                   <RxCross2
                     onClick={() => setIsOpen(false)}
-                    className="text-[43px] text-white-main "
+                    className="text-[43px] text-th-brand "
                   />
                 </div>
                 {/* button */}
                 <OutlineButton
                   text="Launch app"
                   isIcon={true}
-                  style="w-full sm:w-[200px] text-[28px] h-[63px] sm:h-[60px] border-white hover:text-primary hover:border-primary group"
-                  icon=<BsLightningCharge className="text-[28px] text-white-main group-hover:text-primary" />
+                  style="w-full sm:w-[200px] text-[28px] h-[63px] sm:h-[60px] border-th-brand text-th-brand hover:text-th-brand-secondary hover:border-th-brand-secondary group"
+                  icon=<BsLightningCharge className="text-[28px] text-th-brand group-hover:text-th-hover" />
                 />
               </div>
               {/* links */}
@@ -102,7 +102,7 @@ const Header = () => {
                     <Link
                       href={item.path}
                       key={index}
-                      className="capitalize text-white-main text-[36px] font-normal"
+                      className="capitalize text-th-brand hover:text-dark-theme-hover text-[36px] font-normal"
                     >
                       {item.name}
                     </Link>

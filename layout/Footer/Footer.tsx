@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <Wrapper style="bg-black-cool py-8">
+    <Wrapper style="bg-th-bkg-3 py-8">
       <div className="w-full grid lg:gap-0 gap-10 grid-cols-1 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 sm:p-0 p-4">
         {/* 1st col */}
         <div className="col-span-1 sm:col-span-2 gap-3 w-full flex flex-col items-start">
@@ -18,10 +18,10 @@ const Footer = () => {
               className="object-contain"
             />
           </Link>
-          <p className="text-white-main font-inter text-[16px] font-normal ">
+          <p className="text-th-brand font-inter text-[16px] font-normal ">
             A serum-based Solana DEX built <br /> by apes, for other apes.
           </p>
-          <p className="text-white-main uppercase font-inter text-[16px] font-normal ">
+          <p className="text-th-brand uppercase font-inter text-[16px] font-normal ">
             APES. TOGETHER. STRONG.
           </p>
         </div>
@@ -32,7 +32,7 @@ const Footer = () => {
               className="flex flex-col gap-2 sm:gap-3 items-start "
             >
               {/* type */}
-              <p className="text-[16px] font-inter mb-2 sm:mb-0 font-semibold text-white-main">
+              <p className="text-[16px] font-inter mb-2 sm:mb-0 font-semibold text-th-brand">
                 {item.type}
               </p>
               {/* links */}
@@ -41,7 +41,7 @@ const Footer = () => {
                   <Link
                     key={index}
                     href={item.path}
-                    className="capitalize text-[16px] hover:text-primary font-inter text-white-main font-thin"
+                    className="capitalize text-[16px] text-th-brand hover:text-th-hover font-inter font-thin"
                   >
                     {item.name}
                   </Link>

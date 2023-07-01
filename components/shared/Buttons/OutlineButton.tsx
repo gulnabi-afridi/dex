@@ -11,7 +11,7 @@ const OutlineButton = ({
   isIcon,
   icon,
   text,
-  style = "w-[140px] h-[40px] border-white-main text-[16px]",
+  style = "w-[140px] h-[40px] border-th-brand text-[16px]",
 }: Props) => {
   return (
     <button
