@@ -60,6 +60,11 @@ iframe {
   border: 0;
 }
 
+/* ====> rechart style */
+.recharts-surface {
+  border-radius: 40px !important;
+}
+
 .root {
   --brand: theme("colors.dark-theme.brand.primary");
   --brand-secondary: theme("colors.light-theme.brand.secondary");
@@ -68,6 +73,7 @@ iframe {
   --bkg-2: theme("colors.dark-theme.bkg-2");
   --bkg-3: theme("colors.dark-theme.bkg-3");
   --bkg-4: theme("colors.dark-theme.bkg-4");
+  --fkg-1: theme("colors.dark-theme.fkg-1");
 }
 /* dark theme */
 [data-theme="dark-theme"] {
@@ -78,6 +84,7 @@ iframe {
   --bkg-2: theme("colors.dark-theme.bkg-2");
   --bkg-3: theme("colors.dark-theme.bkg-3");
   --bkg-4: theme("colors.dark-theme.bkg-4");
+  --fkg-1: theme("colors.dark-theme.fkg-1");
 }
 /* light theme */
 [data-theme="light-theme"] {
@@ -87,4 +94,5 @@ iframe {
   --bkg-2: theme("colors.light-theme.bkg-2");
   --bkg-3: theme("colors.light-theme.bkg-3");
   --bkg-4: theme("colors.light-theme.bkg-4");
+  --fkg-1: theme("colors.dark-theme.fkg-1");
 }

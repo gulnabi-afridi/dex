@@ -33,6 +33,7 @@ module.exports = {
           "bkg-2": "#000000",
           "bkg-3": "#1c2222",
           "bkg-4": "#090B0B",
+          "fkg-1": "#29F592",
         },
         "light-theme": {
           brand: {
@@ -44,6 +45,7 @@ module.exports = {
           "bkg-2": "#ffffff",
           "bkg-3": "#1c2222",
           "bkg-4": "#090B0B",
+          "fkg-1": "#29F592",
         },
 
         // ==============================================================
@@ -51,6 +53,7 @@ module.exports = {
         "th-bkg-2": "var(--bkg-2)",
         "th-bkg-3": "var(--bkg-3)",
         "th-bkg-4": "var(--bkg-4)",
+        "th-fkg-1": "var(--fkg-1)",
         "th-brand": "var(--brand)",
         "th-brand-secondary": "var(--brand-secondary)",
         "th-hover": "var(--hover)",
