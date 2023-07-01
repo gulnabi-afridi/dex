@@ -12,7 +12,7 @@ const Footer = () => {
           {/* logo */}
           <Link href="/" className="w-[140px] h-[60px] relative">
             <Image
-              src="/assets/logo.png"
+              src="/assets/logo.svg"
               alt=""
               fill
               className="object-contain"
