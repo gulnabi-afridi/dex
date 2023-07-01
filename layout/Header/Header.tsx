@@ -16,7 +16,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Wrapper style="bg-th-bkg-2">
+    <Wrapper style="bg-th-bkg-2 ">
       <div className="w-full h-[100px] flex justify-between items-center">
         {/* logo */}
         <div className="w-[140px] h-[60px] relative">
@@ -49,7 +49,7 @@ const Header = () => {
         <OutlineButton
           text="Launch app"
           isIcon={true}
-          style="w-[140px] h-[44px] border-brand text-th-brand hover:text-th-hover hover:border-th-hover group hidden lg:flex"
+          style="w-[140px] z-20 h-[44px] border-brand text-th-brand hover:text-th-hover hover:border-th-hover group hidden lg:flex"
           icon=<BsLightningCharge className="text-[20px] text-th-secondary group-hover:text-primary" />
         />
 
@@ -111,6 +111,13 @@ const Header = () => {
               </div>
             </div>
           </Drawer>
+        </div>
+      </div>
+
+      {/* the right corner one image */}
+      <div className="absolute right-0 top-0 z-10">
+        <div className="w-[750px] h-[1050px] relative">
+          <Image src="/rightPortion.png" alt="" fill className="object-fill " />
         </div>
       </div>
     </Wrapper>

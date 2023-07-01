@@ -15,7 +15,7 @@ import { Autoplay } from "swiper";
 const HeroSection = () => {
   return (
     <div className="w-full h-full bg-th-bkg-2 relative">
-      <Wrapper style="bg-th-bkg-2 min-h-[calc(100vh-100px)] flex flex-col  justify-center items-center">
+      <Wrapper style="bg-th-bkg-2 min-h-[calc(100vh-100px)] flex flex-col justify-center items-center py-[7rem]">
         <div className="w-full h-full flex flex-col gap-5 justify-center items-center">
           {/* powerd by openbook */}
           <div className="flex justify-center items-center">
@@ -37,7 +37,7 @@ const HeroSection = () => {
             Built for Apes, by Apes.
           </p>
           {/* ===> buttons */}
-          <div className="flex justify-center items-center gap-4 mt-4">
+          <div className="flex justify-center items-center gap-4 mt-4 mb-[12rem]">
             <FillButton
               text="DEX trading"
               styles="w-[230px] h-[60px] bg-th-brand-secondary text-[24px] font-medium"
@@ -49,22 +49,19 @@ const HeroSection = () => {
               icon=<LiaExchangeAltSolid className="text-th-brand text-[26px]" />
             />
           </div>
-          {/* ====> cards */}
         </div>
-        {/* ====> image */}
-        {/* <div className="absolute -left-[16rem] -bottom-[7rem] ">
-          <div className="w-[800px] h-[660px] relative">
-            <Image
-              src="/assets/leftPortion.png"
-              alt=""
-              fill
-              className="object-contain "
-            />
-          </div>
-        </div> */}
       </Wrapper>
-      {/* ===> card */}
-      {/* <div className="w-full flex justify-center items-center absolute -bottom-10">
+      {/* the left corner one image */}
+
+      <div className="absolute left-0 -bottom-[18rem] ">
+        <div className="w-[650px] h-[1060px] relative">
+          <Image src="/leftPortion.png" alt="" fill className="object-fill " />
+        </div>
+      </div>
+
+      {/* ===> cards */}
+
+      <div className="w-full flex justify-center items-center absolute -bottom-[10rem]">
         <Swiper
           autoplay={{
             delay: 2000,
@@ -83,7 +80,7 @@ const HeroSection = () => {
             );
           })}
         </Swiper>
-      </div> */}
+      </div>
     </div>
   );
 };

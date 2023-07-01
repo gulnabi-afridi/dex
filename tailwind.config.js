@@ -32,7 +32,7 @@ module.exports = {
           "bkg-1": "#ffffff",
           "bkg-2": "#000000",
           "bkg-3": "#1c2222",
-          "bkg-4": "#090B0B",
+          "bkg-4": "#121616",
           "fkg-1": "#29F592",
         },
         "light-theme": {
@@ -44,7 +44,7 @@ module.exports = {
           "bkg-1": "#ffffff",
           "bkg-2": "#ffffff",
           "bkg-3": "#1c2222",
-          "bkg-4": "#090B0B",
+          "bkg-4": "#121616",
           "fkg-1": "#29F592",
         },
 
