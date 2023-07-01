@@ -116,7 +116,7 @@ const Header = () => {
 
       {/* the right corner one image */}
       <div className="absolute right-0 top-0 z-10">
-        <div className="w-[750px] h-[1100px] relative">
+        <div className="w-[600px] xl:w-[750px] h-[900px] xl:h-[1100px] lg:block hidden relative">
           <Image src="/rightPortion.png" alt="" fill className="object-fill " />
         </div>
       </div>
