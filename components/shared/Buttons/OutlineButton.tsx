@@ -15,7 +15,7 @@ const OutlineButton = ({
 }: Props) => {
   return (
     <button
-      className={`${style} flex justify-center border-[2px] font-normal rounded-[6px] text-white-main font-inter items-center gap-2`}
+      className={`${style} flex justify-center leading-0 border-[2px] font-normal rounded-[6px] text-white-main font-inter items-center gap-2`}
     >
       {text}
       {icon && icon}

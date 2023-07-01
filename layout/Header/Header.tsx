@@ -16,7 +16,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Wrapper style="bg-th-bkg-2 ">
+    <Wrapper style="bg-th-bkg-2">
       <div className="w-full h-[100px] flex justify-between items-center">
         {/* logo */}
         <div className="w-[140px] h-[60px] relative">
@@ -28,7 +28,7 @@ const Header = () => {
           />
         </div>
         {/* links */}
-        <div className="hidden lg:flex justify-center items-center gap-12">
+        <div className="hidden lg:flex z-20 justify-center items-center gap-12">
           {Data.navibar.map((item, index) => {
             return (
               <Link
@@ -116,7 +116,7 @@ const Header = () => {
 
       {/* the right corner one image */}
       <div className="absolute right-0 top-0 z-10">
-        <div className="w-[750px] h-[1050px] relative">
+        <div className="w-[750px] h-[1100px] relative">
           <Image src="/rightPortion.png" alt="" fill className="object-fill " />
         </div>
       </div>

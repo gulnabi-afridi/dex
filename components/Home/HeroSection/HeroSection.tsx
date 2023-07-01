@@ -37,10 +37,10 @@ const HeroSection = () => {
             Built for Apes, by Apes.
           </p>
           {/* ===> buttons */}
-          <div className="flex justify-center items-center gap-4 mt-4 mb-[12rem]">
+          <div className="flex justify-center items-center gap-4 mt-4 mb-[12rem] z-20">
             <FillButton
               text="DEX trading"
-              styles="w-[230px] h-[60px] bg-th-brand-secondary text-[24px] font-medium"
+              styles="w-[230px] h-[60px] text-th-brand bg-th-brand-secondary text-[24px] font-medium"
             />
             <OutlineButton
               text="Swap"
@@ -54,7 +54,7 @@ const HeroSection = () => {
       {/* the left corner one image */}
 
       <div className="absolute left-0 -bottom-[18rem] ">
-        <div className="w-[650px] h-[1060px] relative">
+        <div className="w-[650px] h-[1100px] relative">
           <Image src="/leftPortion.png" alt="" fill className="object-fill " />
         </div>
       </div>
