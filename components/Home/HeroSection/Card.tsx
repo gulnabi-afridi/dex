@@ -6,7 +6,7 @@ import Image from "next/image";
 const Card = () => {
   return (
     <div className="w-[248px] h-[320px] rounded-[20px] bg-th-bkg-3 ">
-      <div className="flex flex-col h-[180px] p-6 items-start">
+      <div className="flex flex-col p-6 items-start">
         <div className="flex justify-center items-center gap-3">
           <Image
             src="/assets/card.svg"

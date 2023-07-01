@@ -5,10 +5,16 @@ import FillButton from "@/components/shared/Buttons/FillButton";
 import OutlineButton from "@/components/shared/Buttons/OutlineButton";
 import { LiaExchangeAltSolid } from "react-icons/lia";
 import Card from "./Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+// import required modules
+import { Autoplay } from "swiper";
 
 const HeroSection = () => {
   return (
-    <div className="w-full h-full bg-th-bkg-2">
+    <div className="w-full h-full bg-th-bkg-2 relative">
       <Wrapper style="bg-th-bkg-2 min-h-[calc(100vh-100px)] flex flex-col  justify-center items-center">
         <div className="w-full h-full flex flex-col gap-5 justify-center items-center">
           {/* powerd by openbook */}
@@ -58,7 +64,26 @@ const HeroSection = () => {
         </div> */}
       </Wrapper>
       {/* ===> card */}
-      <Card />
+      {/* <div className="w-full flex justify-center items-center absolute -bottom-10">
+        <Swiper
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          slidesPerView={5.5}
+          spaceBetween={3}
+          className="mySwiper"
+        >
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <Card />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div> */}
     </div>
   );
 };

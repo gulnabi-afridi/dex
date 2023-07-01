@@ -63,7 +63,7 @@ const data = [
 
 const MiniChart: React.FC = () => {
   return (
-    <div className="w-full h-[calc(320px-180px)]">
+    <div className="w-full h-[150px]">
       <ResponsiveContainer width="99%" height="100%">
         <AreaChart
           width={200}
