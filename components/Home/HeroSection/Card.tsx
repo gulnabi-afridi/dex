@@ -1,6 +1,6 @@
 import React from "react";
 import { BsTriangleFill } from "react-icons/bs";
-import MiniChart from "@/components/shared/MiniCart";
+import MiniChart from "@/components/Home/HeroSection/MiniCart";
 import Image from "next/image";
 
 const Card = () => {

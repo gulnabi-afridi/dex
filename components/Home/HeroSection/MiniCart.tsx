@@ -1,65 +1,10 @@
 import React from "react";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
-
+import { Data } from "@/data/JSON";
 // interface Props {
 //   data: {}[];
 //   dataKey: string;
 // }
-
-const data = [
-  {
-    name: "price 1",
-    value: 722,
-  },
-  {
-    name: "price 2",
-    value: 330,
-  },
-  {
-    name: "price 2",
-    value: 1330,
-  },
-  {
-    name: "price 2",
-    value: 830,
-  },
-  {
-    name: "price 2",
-    value: 1430,
-  },
-  {
-    name: "price 2",
-    value: 2030,
-  },
-  {
-    name: "price 2",
-    value: 1470,
-  },
-  {
-    name: "price 2",
-    value: 1090,
-  },
-  {
-    name: "price 2",
-    value: 1890,
-  },
-  {
-    name: "price 2",
-    value: 1990,
-  },
-  {
-    name: "price 2",
-    value: 890,
-  },
-  {
-    name: "price 2",
-    value: 1090,
-  },
-  {
-    name: "price 2",
-    value: 1460,
-  },
-];
 
 const MiniChart: React.FC = () => {
   return (
@@ -67,7 +12,7 @@ const MiniChart: React.FC = () => {
       <ResponsiveContainer width="99%" height="100%">
         <AreaChart
           width={200}
-          data={data}
+          data={Data.heroSectionChartData}
           margin={{
             top: 5,
             right: 0,

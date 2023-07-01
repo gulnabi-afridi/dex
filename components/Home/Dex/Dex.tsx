@@ -6,27 +6,6 @@ import Wrapper from "@/components/shared/ComponentWrapper/Wrapepr";
 
 const Dex = () => {
   return (
-    // <div className="w-full flex items-center justify-end bg-th-bkg-4 relative pt-[12rem]">
-    // <div className="w-full max-w-[600px] absolute left-36 flex flex-col gap-6 items-start">
-    //   <p className="text-th-brand leading-[55px] font-inter text-[54px] font-bold">
-    //     An unmatched DEX trading experience.
-    //   </p>
-    //   <p className="text-th-brand font-inter text-[24px] font-thin">
-    //     Regardless of your trading level, Solape can accommodate you for a
-    //     seamless, integrated experience trading in the Solana ecosystem.
-    //   </p>
-    //   <Link href="#" className="flex justify-center items-center gap-2">
-    //     <p className="text-th-brand-secondary text-[24px] font-semibold font-inter">
-    //       Explore the DEX
-    //     </p>
-    //     <BsArrowRight className="text-th-brand-secondary text-[26px]" />
-    //   </Link>
-    // </div>
-    //   {/* 2nd col */}
-    //   <div className="w-full max-w-[1050px] h-[620px] relative">
-    //     <Image src="/assets/dex.png" alt="" fill className="object-cover" />
-    //   </div>
-    // </div>
     <div className="w-full relative bg-th-bkg-4 flex min-h-[650px] sm:min-h-[900px] md:min-h-[600px] lg:min-h-[750px] xl:min-h-[880px] flex-col md:flex-row justify-between items-center">
       <Wrapper style="h-full flex justify-center items-center ">
         <div className="w-full h-full max-w-[450px] lg:max-w-[500px] xl:max-w-[600px] flex flex-col gap-4 lg:gap-6 items-start justify-center mt-[12rem] md:mt-28">

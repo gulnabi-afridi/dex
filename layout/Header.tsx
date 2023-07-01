@@ -5,7 +5,7 @@ import Link from "next/link";
 import OutlineButton from "@/components/shared/Buttons/OutlineButton";
 import { BsLightningCharge } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
-import { Data } from "../../data/JSON";
+import { Data } from "../data/JSON";
 
 // ====> import for drawer and humburger
 import { Spin as Hamburger } from "hamburger-react";
@@ -19,9 +19,9 @@ const Header = () => {
     <Wrapper style="bg-th-bkg-2">
       <div className="w-full h-[100px] flex justify-between items-center">
         {/* logo */}
-        <div className="w-[140px] h-[60px] relative">
+        <div className="w-[150px] h-[60px] relative">
           <Image
-            src="/assets/logo.png"
+            src="/assets/logo.svg"
             alt=""
             fill
             className="object-contain"
