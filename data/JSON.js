@@ -80,4 +80,31 @@ export const Data = {
       value: 1460,
     },
   ],
+  solapeTokenButtonImage: [
+    {
+      name: "ftx",
+      img: "assets/ftx.svg",
+      width: 89,
+      height: 28,
+    },
+
+    {
+      name: "coinMarketCap",
+      img: "assets/solana.svg",
+      width: 146,
+      height: 30,
+    },
+    {
+      name: "fcoinGeckotx",
+      img: "assets/coinGecko.svg",
+      width: 108,
+      height: 30,
+    },
+    {
+      name: "coinMarketCap",
+      img: "assets/coinMarketCap.svg",
+      width: 146,
+      height: 25,
+    },
+  ],
 };

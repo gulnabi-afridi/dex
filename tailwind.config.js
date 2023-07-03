@@ -34,6 +34,9 @@ module.exports = {
           "bkg-3": "#1c2222",
           "bkg-4": "#121616",
           "fkg-1": "#29F592",
+          "fkg-2": "rgb(0 0 0 / 0.2)",
+          "gradient-1": "rgb(224,108,0)",
+          "gradient-2": "rgb(9,11,11)",
         },
         "light-theme": {
           brand: {
@@ -46,6 +49,9 @@ module.exports = {
           "bkg-3": "#1c2222",
           "bkg-4": "#121616",
           "fkg-1": "#29F592",
+          "fkg-2": "rgb(0 0 0 / 0.2)",
+          "gradient-1": "rgb(224,108,0)",
+          "gradient-2": "rgb(9,11,11)",
         },
 
         // ==============================================================
@@ -54,9 +60,12 @@ module.exports = {
         "th-bkg-3": "var(--bkg-3)",
         "th-bkg-4": "var(--bkg-4)",
         "th-fkg-1": "var(--fkg-1)",
+        "th-fkg-2": "var(--fkg-2)",
         "th-brand": "var(--brand)",
         "th-brand-secondary": "var(--brand-secondary)",
         "th-hover": "var(--hover)",
+        "th-gradient-1": "var(--gradient-1)",
+        "th-gradient-2": "var(--gradient-2)",
       },
     },
   },

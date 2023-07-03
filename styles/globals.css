@@ -74,6 +74,8 @@ iframe {
   --bkg-3: theme("colors.dark-theme.bkg-3");
   --bkg-4: theme("colors.dark-theme.bkg-4");
   --fkg-1: theme("colors.dark-theme.fkg-1");
+  --gradient-1: theme("colors.dark-theme.gradient-1");
+  --gradient-2: theme("colors.dark-theme.gradient-2");
 }
 /* dark theme */
 [data-theme="dark-theme"] {
@@ -85,6 +87,9 @@ iframe {
   --bkg-3: theme("colors.dark-theme.bkg-3");
   --bkg-4: theme("colors.dark-theme.bkg-4");
   --fkg-1: theme("colors.dark-theme.fkg-1");
+  --fkg-2: theme("colors.dark-theme.fkg-2");
+  --gradient-1: theme("colors.dark-theme.gradient-1");
+  --gradient-2: theme("colors.dark-theme.gradient-2");
 }
 /* light theme */
 [data-theme="light-theme"] {
@@ -94,5 +99,8 @@ iframe {
   --bkg-2: theme("colors.light-theme.bkg-2");
   --bkg-3: theme("colors.light-theme.bkg-3");
   --bkg-4: theme("colors.light-theme.bkg-4");
-  --fkg-1: theme("colors.dark-theme.fkg-1");
+  --fkg-1: theme("colors.light-theme.fkg-1");
+  --fkg-2: theme("colors.dark-theme.fkg-2");
+  --gradient-1: theme("colors.light-theme.gradient-1");
+  --gradient-2: theme("colors.light-theme.gradient-2");
 }
