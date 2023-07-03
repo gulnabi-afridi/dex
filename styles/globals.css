@@ -74,6 +74,9 @@ iframe {
   --bkg-3: theme("colors.dark-theme.bkg-3");
   --bkg-4: theme("colors.dark-theme.bkg-4");
   --fkg-1: theme("colors.dark-theme.fkg-1");
+  --fkg-2: theme("colors.dark-theme.fkg-2");
+  --fkg-3: theme("colors.dark-theme.fkg-3");
+  --fkg-4: theme("colors.dark-theme.fkg-4");
   --gradient-1: theme("colors.dark-theme.gradient-1");
   --gradient-2: theme("colors.dark-theme.gradient-2");
 }
@@ -88,6 +91,8 @@ iframe {
   --bkg-4: theme("colors.dark-theme.bkg-4");
   --fkg-1: theme("colors.dark-theme.fkg-1");
   --fkg-2: theme("colors.dark-theme.fkg-2");
+  --fkg-3: theme("colors.dark-theme.fkg-3");
+  --fkg-4: theme("colors.dark-theme.fkg-4");
   --gradient-1: theme("colors.dark-theme.gradient-1");
   --gradient-2: theme("colors.dark-theme.gradient-2");
 }
@@ -101,6 +106,8 @@ iframe {
   --bkg-4: theme("colors.light-theme.bkg-4");
   --fkg-1: theme("colors.light-theme.fkg-1");
   --fkg-2: theme("colors.dark-theme.fkg-2");
+  --fkg-3: theme("colors.light-theme.fkg-3");
+  --fkg-4: theme("colors.dark-theme.fkg-4");
   --gradient-1: theme("colors.light-theme.gradient-1");
   --gradient-2: theme("colors.light-theme.gradient-2");
 }
