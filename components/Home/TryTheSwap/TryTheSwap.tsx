@@ -4,14 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 
-const SeeTradingPairs = () => {
+const TryTheSwap = () => {
   return (
-    <Wrapper style=" bg-th-bkg-2 py-10 pt-24">
+    <Wrapper style=" bg-th-bkg-2 py-10">
       <div className="w-full grid grid-cols-2 justify-center items-center">
-        {/* ====> image */}
-        <div className="w-full max-w-[430px] h-[600px] relative">
-          <Image src="/assets/tradingPair.svg" fill alt="" />
-        </div>
         {/* ==> 2nd col */}
         <div className="w-full flex flex-col items-start gap-6">
           <p className="text-th-brand leading-[40px] sm:leading-[55px] font-inter text-[34px] sm:text-[40px] lg:text-[45px] xl:text-[54px] font-bold">
@@ -28,9 +24,13 @@ const SeeTradingPairs = () => {
             <BsArrowRight className="text-th-brand-secondary text-[26px]" />
           </Link>
         </div>
+        {/* ====> image */}
+        <div className="w-full  h-[600px] relative">
+          <Image src="/assets/trySwap.svg" fill alt="" />
+        </div>
       </div>
     </Wrapper>
   );
 };
 
-export default SeeTradingPairs;
+export default TryTheSwap;

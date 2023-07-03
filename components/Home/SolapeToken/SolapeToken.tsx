@@ -46,7 +46,7 @@ const SolapeToken = () => {
   };
 
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full bg-th-bkg-2 flex flex-col py-10">
       {/* ========> solape token */}
       <div className="w-full h-[280px] bg-th-gradient-1">
         <div className="flex h-full justify-center items-center gap-8">
