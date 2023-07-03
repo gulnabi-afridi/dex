@@ -1,6 +1,7 @@
 import React from "react";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
 import { Data } from "@/data/JSON";
+
 // interface Props {
 //   data: {}[];
 //   dataKey: string;

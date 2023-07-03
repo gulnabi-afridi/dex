@@ -12,7 +12,7 @@ const Dex = () => {
           <p className="text-th-brand leading-[40px] sm:leading-[55px] font-inter text-[34px] sm:text-[40px] lg:text-[45px] xl:text-[54px] font-bold">
             An unmatched DEX trading experience.
           </p>
-          <p className="text-th-brand font-inter text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[24px] font-thin">
+          <p className="text-th-brand font-inter text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[24px] font-normal">
             Regardless of your trading level, Solape can accommodate you for a
             seamless, integrated experience trading in the Solana ecosystem.
           </p>
