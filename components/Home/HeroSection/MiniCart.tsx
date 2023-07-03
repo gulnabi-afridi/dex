@@ -9,7 +9,7 @@ import { Data } from "@/data/JSON";
 
 const MiniChart: React.FC = () => {
   return (
-    <div className="w-full h-[150px]">
+    <div className="w-full miniChart h-[150px]">
       <ResponsiveContainer width="99%" height="100%">
         <AreaChart
           width={200}
@@ -22,7 +22,6 @@ const MiniChart: React.FC = () => {
           }}
         >
           <Area
-            type="monotone"
             dataKey="value"
             stroke="#ff9735"
             strokeWidth={3}

@@ -61,7 +61,7 @@ iframe {
 }
 
 /* ====> rechart style */
-.recharts-surface {
+.miniChart .recharts-surface {
   border-radius: 40px !important;
 }
 
