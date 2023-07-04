@@ -1,17 +1,17 @@
 import React from "react";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapepr";
-import Image from "next/image";
 import Card from "./Card";
+import Link from "next/link";
 
 const Services = () => {
   return (
     <Wrapper style="bg-th-bkg-2 py-10">
-      <div className="w-full flex flex-col gap-6 md:gap-14 justify-center items-center">
-        <p className="text-[34px] md:text-[56px] font-bold font-inter text-th-brand">
-          Roadmap
+      <div className="w-full flex flex-col gap-6 md:gap-10 justify-center items-center">
+        <p className="text-[34px] md:text-[56px] font-bold font-inter text-th-brand capitalize">
+          services
         </p>
         {/* ===> card */}
-        <div className="w-full xl:w-[82%] grid gap-6 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+        <div className="w-full xl:w-[82%] grid gap-6 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-4">
           {servicesData.map((item, index) => {
             return (
               <Card
@@ -24,10 +24,11 @@ const Services = () => {
             );
           })}
         </div>
-        <div className="w-full xl:w-[82%] grid gap-6 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
-        <p className="text-[#757575] text-center text-[14px] font-normal">
-          The Solape team reserves the right to adjust the roadmap based on the
-          changing market <br /> conditions and the overal industry landscape.
+        <p className="text-[#757575] text-center text-[14px] font-normal flex justify-center items-center gap-1">
+          Have a custom request in mind? Reach out
+          <Link href="#" className="underline text-th-brand">
+            here.
+          </Link>
         </p>
       </div>
     </Wrapper>
@@ -42,13 +43,13 @@ const servicesData = [
     btnText: "request access",
   },
   {
-    img: "/assets/apiAccess.svg",
+    img: "/assets/charting.svg",
     title: "charting",
     des: "Solape offers extensive charting tools on-site, as well as an external service for integration purposes.",
     btnText: "request access",
   },
   {
-    img: "/assets/apiAccess.svg",
+    img: "/assets/listing.svg",
     title: "listing",
     des: "Want us to list your project? Adding custom markets is allowed by default, but verified listings put you in a more prominent spot.",
     btnText: "submit request",

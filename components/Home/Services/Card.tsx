@@ -30,7 +30,11 @@ const Card = ({ img, title, des, btnText }: Props) => {
           </p>
         </div>
         {/* ==> button */}
-        <button className="w-full h-[47px] capitalize bg-[#2e3838] text-th-brand text-[16px] font-semibold rounded-[10px] mt-2">
+        <button
+          className={`w-full h-[50px] capitalize ${
+            btnText === "submit request" ? "bg-th-gradient-1" : "bg-[#2e3838]"
+          } text-th-brand text-[16px] font-semibold rounded-[10px] mt-2`}
+        >
           {btnText}
         </button>
       </div>
