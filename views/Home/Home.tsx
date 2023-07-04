@@ -5,6 +5,7 @@ import SeeTradingPairs from "@/components/Home/SeeTradingPairs/SeeTradingPairs";
 import SolapeToken from "@/components/Home/SolapeToken/SolapeToken";
 import TryTheSwap from "@/components/Home/TryTheSwap/TryTheSwap";
 import Roadmap from "@/components/Home/Roadmap/Roadmap";
+import Services from "@/components/Home/Services/Services";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <TryTheSwap />
       <SolapeToken />
       <Roadmap />
+      <Services />
     </>
   );
 };
