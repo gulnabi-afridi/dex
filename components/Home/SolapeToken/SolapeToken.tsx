@@ -138,8 +138,8 @@ const SolapeToken = () => {
               </div>
             </div>
             {/* =====> graph */}
-            <div className="w-full h-[140px] sm:h-[320px] lg:h-[280px]">
-              <ResponsiveContainer width="99%" height="90%">
+            <div className="w-full h-[140px] sm:h-[320px] lg:h-full">
+              <ResponsiveContainer width="99%" height="100%">
                 <AreaChart
                   data={Data.solapeTokenChartData}
                   margin={{
