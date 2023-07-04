@@ -165,4 +165,44 @@ export const Data = {
       value: 1460,
     },
   ],
+  roadmapData: [
+    {
+      question: "Q2 2021",
+      list: [
+        "Dex launch",
+        "$SOLAPE Token",
+        "Mainnet",
+        " Price API Integration",
+        "Margin Trading (ApeXLeverage)",
+        "Token data on CoinGecko, FTX, CoinMarketCap",
+      ],
+      current: false,
+    },
+    {
+      question: "Q3 2021",
+      list: [
+        "DEX v2 Launch",
+        "Swap App",
+        "DEX Market orders",
+        "NFT Storefront launched ",
+        "Ecosystem buybacks",
+      ],
+      current: true,
+    },
+    {
+      question: "Q4 2021",
+      list: [
+        "Token Minting",
+        "PERP contracts",
+        "NFT Marketplace",
+        "Ecosystem buybacks ",
+      ],
+      current: false,
+    },
+    {
+      question: "Q1 2021",
+      list: ["Other dex tools: DCA", "Games", "Next NFT launch or NFT perks"],
+      current: false,
+    },
+  ],
 };
