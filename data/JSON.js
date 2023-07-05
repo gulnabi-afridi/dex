@@ -205,4 +205,24 @@ export const Data = {
       current: false,
     },
   ],
+  servicesData: [
+    {
+      img: "/assets/apiAccess.svg",
+      title: "API Access",
+      des: " Looking to get access to our custom Solape API? Need a marke feed to implement into your up-and-coming DAPP?",
+      btnText: "request access",
+    },
+    {
+      img: "/assets/charting.svg",
+      title: "charting",
+      des: "Solape offers extensive charting tools on-site, as well as an external service for integration purposes.",
+      btnText: "request access",
+    },
+    {
+      img: "/assets/listing.svg",
+      title: "listing",
+      des: "Want us to list your project? Adding custom markets is allowed by default, but verified listings put you in a more prominent spot.",
+      btnText: "submit request",
+    },
+  ],
 };

@@ -11,7 +11,7 @@ interface Props {
 const Card = ({ img, title, des, btnText }: Props) => {
   return (
     <div className="w-full h-full min-h-[345px] bg-th-bkg-3 rounded-[30px]">
-      <div className="w-full h-full p-6 flex flex-col justify-between">
+      <div className="w-full h-full py-8 px-6 flex flex-col justify-between">
         {/* top image */}
         <div className="flex flex-col gap-2 h-full">
           <div className="w-full grid grid-cols-[1fr,0.5fr,1fr] justify-center items-center">

@@ -2,6 +2,7 @@ import React from "react";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapepr";
 import Card from "./Card";
 import Link from "next/link";
+import { Data } from "@/data/JSON";
 
 const Services = () => {
   return (
@@ -12,7 +13,7 @@ const Services = () => {
         </p>
         {/* ===> card */}
         <div className="w-full xl:w-[82%] grid gap-6 sm:gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-4">
-          {servicesData.map((item, index) => {
+          {Data.servicesData.map((item, index) => {
             return (
               <Card
                 key={index}
@@ -34,26 +35,5 @@ const Services = () => {
     </Wrapper>
   );
 };
-
-const servicesData = [
-  {
-    img: "/assets/apiAccess.svg",
-    title: "API Access",
-    des: " Looking to get access to our custom Solape API? Need a marke feed to implement into your up-and-coming DAPP?",
-    btnText: "request access",
-  },
-  {
-    img: "/assets/charting.svg",
-    title: "charting",
-    des: "Solape offers extensive charting tools on-site, as well as an external service for integration purposes.",
-    btnText: "request access",
-  },
-  {
-    img: "/assets/listing.svg",
-    title: "listing",
-    des: "Want us to list your project? Adding custom markets is allowed by default, but verified listings put you in a more prominent spot.",
-    btnText: "submit request",
-  },
-];
 
 export default Services;

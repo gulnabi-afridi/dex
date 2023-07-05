@@ -6,6 +6,7 @@ import SolapeToken from "@/components/Home/SolapeToken/SolapeToken";
 import TryTheSwap from "@/components/Home/TryTheSwap/TryTheSwap";
 import Roadmap from "@/components/Home/Roadmap/Roadmap";
 import Services from "@/components/Home/Services/Services";
+import Faq from "@/components/Home/Faq/Faq";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <SolapeToken />
       <Roadmap />
       <Services />
+      <Faq />
     </>
   );
 };
