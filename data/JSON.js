@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const Data = {
   navibar: [
     {
@@ -223,6 +225,64 @@ export const Data = {
       title: "listing",
       des: "Want us to list your project? Adding custom markets is allowed by default, but verified listings put you in a more prominent spot.",
       btnText: "submit request",
+    },
+  ],
+  faqData: [
+    {
+      question: "This is how it looks when the question is active?",
+      answer: (
+        <>
+          I walked forty-seven miles of barbed wire, I got a cobra snake for a
+          necktie, I got a brand new house by the road side, Made out of
+          rattlesnake hide. I got me chimney made on top, made from a human
+          skull, now come on, take a little walk with me. Now how do you love?
+          Come on Arlene, take me by hand, Let me know you understand. Who do
+          you love? Ride nine times on the midnight train through the fire and
+          cold rain who do you love I’ve got a tombstone hand in a graveyard
+          mine, just twenty two and I don’t mind dying. Who do you love? Who do
+          you love?{" "}
+        </>
+      ),
+    },
+    {
+      question: "This is how it looks when the question is active?",
+      answer: (
+        <>
+          I walked forty-seven miles of barbed wire, I got a cobra snake for a
+          necktie, I got a brand new house by the road side, Made out of
+          rattlesnake hide. I got me chimney made on top, made from a human
+          skull, now come on, take a little walk with me. Now how do you love?
+          Come on Arlene, take me by hand, Let me know you understand. Who do
+          you love? Ride nine times on the midnight train through the fire and
+          cold rain who do you love I’ve got a tombstone hand in a graveyard
+          mine, just twenty two and I don’t mind dying. Who do you love? Who do
+          you love?{" "}
+        </>
+      ),
+    },
+    {
+      question: "This is how it looks when the question is active?",
+      answer: (
+        <>
+          I walked forty-seven miles of barbed wire, I got a cobra snake for a
+          necktie, I got a brand new house by the road side, Made out of
+          rattlesnake hide. I got me chimney made on top, made from a human
+          skull, now come on, take a little walk with me. Now how{" "}
+          <Link href="#" className="text-th-gradient-1 underline">
+            {" "}
+            do you love
+          </Link>
+          ? Come on Arlene, take me by hand, Let me know you understand. Who do
+          you love? Ride nine times on the midnight train through{" "}
+          <Link href="#" className="text-th-gradient-1 underline">
+            {" "}
+            the fire
+          </Link>{" "}
+          and cold rain who do you love I’ve got a tombstone hand in a graveyard
+          mine, just twenty two and I don’t mind dying. Who do you love? Who do
+          you love? ,
+        </>
+      ),
     },
   ],
 };
