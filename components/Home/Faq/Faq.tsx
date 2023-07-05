@@ -24,7 +24,11 @@ const Faq = () => {
             <Accordion allowZeroExpanded>
               {Data.faqData.map((item, index) => {
                 return (
-                  <FaqCard question={item.question} answer={item.answer} />
+                  <FaqCard
+                    key={index}
+                    question={item.question}
+                    answer={item.answer}
+                  />
                 );
               })}
             </Accordion>
