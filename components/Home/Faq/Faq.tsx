@@ -19,7 +19,7 @@ const FaqSection = () => {
           </p>
           <p className="text-[#757575] text-center text-[18px] font-normal">
             For more information, please check our{" "}
-            <Link href="#" className="text-th-brand-secondary underline">
+            <Link href="#" className="text-th-gradient-1 underline">
               {" "}
               Help page.
             </Link>

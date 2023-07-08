@@ -146,7 +146,7 @@ const SolapeToken = () => {
                     top: 5,
                     right: 0,
                     left: 0,
-                    bottom: 5,
+                    bottom: 0,
                   }}
                 >
                   <Area

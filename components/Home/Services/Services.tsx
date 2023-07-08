@@ -27,7 +27,7 @@ const Services = () => {
         </div>
         <p className="text-[#757575] text-center text-[14px] font-normal flex justify-center items-center gap-1">
           Have a custom request in mind? Reach out
-          <Link href="#" className="underline text-th-brand">
+          <Link href="#" className="underline text-th-gradient-1">
             here.
           </Link>
         </p>
