@@ -1,11 +1,15 @@
 import React from "react";
 import Wrapper from "@/components/shared/ComponentWrapper/Wrapepr";
 import Link from "next/link";
-import FaqCard from "./FaqCard";
-import { Accordion } from "react-accessible-accordion";
+import Faq from "react-faq-component";
 import { Data } from "@/data/JSON";
 
-const Faq = () => {
+const config = {
+  animate: true,
+  tabFocus: true,
+};
+
+const FaqSection = () => {
   return (
     <Wrapper style="bg-th-bkg-2 py-10 pb-32">
       <div className="w-full flex justify-center items-center">
@@ -21,17 +25,7 @@ const Faq = () => {
             </Link>
           </p>
           <div className="w-full mt-6">
-            <Accordion allowZeroExpanded>
-              {Data.faqData.map((item, index) => {
-                return (
-                  <FaqCard
-                    key={index}
-                    question={item.question}
-                    answer={item.answer}
-                  />
-                );
-              })}
-            </Accordion>
+            <Faq data={Data.faqData} config={config} />
           </div>
         </div>
       </div>
@@ -39,4 +33,4 @@ const Faq = () => {
   );
 };
 
-export default Faq;
+export default FaqSection;
