@@ -1,7 +1,12 @@
 import React from "react";
+import Tokenomics from "@/views/Tokenomics/Tokenomics";
 
-const tokenomics = () => {
-  return <div>tokenomics</div>;
+const TokenomicsPage = () => {
+  return (
+    <React.Fragment>
+      <Tokenomics />
+    </React.Fragment>
+  );
 };
 
-export default tokenomics;
+export default TokenomicsPage;
