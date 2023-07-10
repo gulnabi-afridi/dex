@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -6,11 +6,17 @@ import FillButton from "@/components/shared/Buttons/FillButton";
 import { LuChevronDown } from "react-icons/lu";
 import { Data } from "@/data/JSON";
 
+// ====> import for drawer and humburger
+import { Spin as Hamburger } from "hamburger-react";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
+
 const Header2 = () => {
   const Router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full flex justify-between items-center bg-th-bkg-2 h-[64px] px-10">
+    <div className="w-full flex justify-between items-center bg-th-bkg-2 h-[64px] px-4 sm:px-10">
       {/* left portion */}
       <div className="flex justify-center items-center gap-9">
         {/* logo */}
@@ -23,7 +29,7 @@ const Header2 = () => {
           />
         </div>
         {/* links */}
-        <div className="flex justify-center items-center gap-9">
+        <div className="hidden lg:flex justify-center items-center gap-9">
           {Data.header2Data.map((item, index) => {
             return (
               <Link
@@ -46,7 +52,7 @@ const Header2 = () => {
         </div>
       </div>
       {/* ===> right portion */}
-      <div className="flex justify-center items-center gap-4">
+      <div className="hidden lg:flex justify-center items-center gap-4">
         <FillButton
           text="Add market"
           styles="w-[120px] h-[40px] bg-[#2E3838] text-th-brand font-inter font-medium text-[16px]"
@@ -58,6 +64,23 @@ const Header2 = () => {
           </div>
           <LuChevronDown className="text-th-brand text-[24px]" />
         </div>
+      </div>
+      {/* ====> hamburger + drawer for small screen */}
+      <div className="lg:hidden flex justify-end items-center">
+        <Hamburger
+          color="white"
+          rounded
+          size={26}
+          toggled={isOpen}
+          toggle={setIsOpen}
+        />
+        <Drawer
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          direction="right"
+          className="drawer"
+          style={{ background: "#1c2222" }}
+        ></Drawer>
       </div>
     </div>
   );
