@@ -13,8 +13,10 @@ import {
   Label,
 } from "recharts";
 import Link from "next/link";
+import { Data } from "@/data/JSON";
 
 const Tokenomics = () => {
+  // code for the graph ----------------------------------------
   const breakpoints = [0, 25, 50, 75, 100];
   const formatYAxisTick = (value: number) => {
     const index = Math.round((value / 100) * (breakpoints.length - 1));
@@ -32,7 +34,7 @@ const Tokenomics = () => {
             </p>
             {/* ===> buttons */}
             <div className="flex justify-center items-center gap-3">
-              {tokenomicsButtonsData.map((item, index) => {
+              {Data.tokenomicsButtonsData.map((item, index) => {
                 return (
                   <button
                     key={index}
@@ -46,8 +48,9 @@ const Tokenomics = () => {
           </div>
 
           {/* buy solape section ------------------ */}
+
           <div className="w-full flex flex-col h-full">
-            <div className="h-[81px] bg-[#121616] flex justify-between items-center p-4">
+            <div className="h-[81px] bg-[#121616] flex justify-between items-center p-4 rounded-t-[6px]">
               {/* coin name */}
               <div className="flex gap-3 justify-center items-center">
                 <div className="w-[34px] h-[34px] bg-th-bkg-2 rounded-full flex justify-center items-center">
@@ -67,7 +70,7 @@ const Tokenomics = () => {
                 $0.5424
               </p>
             </div>
-            <div className="w-full flex flex-col gap-4 bg-[#1C2222] p-4">
+            <div className="w-full flex flex-col gap-4 bg-[#1C2222] rounded-b-[6px] p-4">
               <div className="w-full grid gap-y-5 grid-cols-2 items-center">
                 {/* ==> max supply */}
                 <div className="w-full flex flex-col gap-1">
@@ -127,7 +130,11 @@ const Tokenomics = () => {
           <div className="w-full h-full flex flex-col bg-[#121616] rounded-[6px]">
             <div className="w-full h-[calc(100%-90px)] pt-8 pr-2">
               <ResponsiveContainer width="100%" height="99%">
-                <BarChart width={150} height={40} data={data}>
+                <BarChart
+                  width={150}
+                  height={40}
+                  data={Data.tokenomicsGraphData}
+                >
                   <XAxis
                     tick={false}
                     axisLine={{ stroke: "white", strokeDasharray: "2 2" }}
@@ -210,7 +217,7 @@ const Tokenomics = () => {
         </div>
         {/* snippets ---------------- */}
         <div className="w-full max-w-[980px] h-[30px] grid gap-3 grid-cols-3">
-          {tokenomicsSnippetsData.map((item, index) => {
+          {Data.tokenomicsSnippetsData.map((item, index) => {
             return (
               <div
                 key={index}
@@ -239,49 +246,5 @@ const Tokenomics = () => {
     </Wrapper>
   );
 };
-
-const tokenomicsButtonsData = [
-  "/assets/solonaFm.svg",
-  "/assets/coinGecko.svg",
-  "/assets/coinMarketCap.svg",
-  "/assets/solana.svg",
-  "/assets/solscan.svg",
-];
-
-const data = [
-  {
-    name: "Market (91.3%)",
-    uv: 90,
-  },
-  {
-    name: "Team (8.7%)",
-    uv: 10,
-  },
-];
-
-const tokenomicsSnippetsData = [
-  {
-    img: "/assets/supplyIcon.svg",
-    value: "70.16%",
-    imgeWidth: 30,
-    imgeHeight: 40,
-    text: "of initial supply (1B) burned",
-  },
-  {
-    img: "/assets/burnIcon.svg",
-    value: "$31.2M",
-    imgeWidth: 43,
-    imgeHeight: 45,
-    text: "burned value (current prices)",
-  },
-  {
-    img: "/assets/airDropIcon.svg",
-    imgeWidth: 40,
-    imgeHeight: 40,
-
-    value: "$5,562.5",
-    text: "OG airdrop value (current)",
-  },
-];
 
 export default Tokenomics;

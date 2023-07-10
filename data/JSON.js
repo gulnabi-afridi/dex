@@ -4,7 +4,7 @@ export const Data = {
   navibar: [
     {
       name: "trade",
-      path: "#",
+      path: "/tokenomics",
       dot: false,
     },
     {
@@ -335,6 +335,47 @@ export const Data = {
       name: "docs",
       path: "#",
       isNew: false,
+    },
+  ],
+  tokenomicsButtonsData: [
+    "/assets/solonaFm.svg",
+    "/assets/coinGecko.svg",
+    "/assets/coinMarketCap.svg",
+    "/assets/solana.svg",
+    "/assets/solscan.svg",
+  ],
+  tokenomicsGraphData: [
+    {
+      name: "Market (91.3%)",
+      uv: 90,
+    },
+    {
+      name: "Team (8.7%)",
+      uv: 10,
+    },
+  ],
+  tokenomicsSnippetsData: [
+    {
+      img: "/assets/supplyIcon.svg",
+      value: "70.16%",
+      imgeWidth: 30,
+      imgeHeight: 40,
+      text: "of initial supply (1B) burned",
+    },
+    {
+      img: "/assets/burnIcon.svg",
+      value: "$31.2M",
+      imgeWidth: 43,
+      imgeHeight: 45,
+      text: "burned value (current prices)",
+    },
+    {
+      img: "/assets/airDropIcon.svg",
+      imgeWidth: 40,
+      imgeHeight: 40,
+
+      value: "$5,562.5",
+      text: "OG airdrop value (current)",
     },
   ],
 };
