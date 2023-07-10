@@ -305,4 +305,36 @@ export const Data = {
       },
     ],
   },
+  header2Data: [
+    {
+      name: "dex",
+      path: "#",
+      isNew: false,
+    },
+    {
+      name: "swap",
+      path: "#",
+      isNew: false,
+    },
+    {
+      name: "markets",
+      path: "#",
+      isNew: true,
+    },
+    {
+      name: "token",
+      path: "#",
+      isNew: false,
+    },
+    {
+      name: "airdrops",
+      path: "#",
+      isNew: false,
+    },
+    {
+      name: "docs",
+      path: "#",
+      isNew: false,
+    },
+  ],
 };
