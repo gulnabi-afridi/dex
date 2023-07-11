@@ -18,6 +18,8 @@ import { useMediaQuery } from "react-responsive";
 
 const Tokenomics = () => {
   // code for the graph ----------------------------------------
+  const firstCellGradient = "url(#gradient1)";
+  const secCellGradient = "url(#gradient2)";
   const breakpoints = [0, 25, 50, 75, 100];
   const formatYAxisTick = (value: number) => {
     const index = Math.round((value / 100) * (breakpoints.length - 1));
@@ -36,12 +38,12 @@ const Tokenomics = () => {
               Tokenomics
             </p>
             {/* ===> buttons */}
-            <div className="w-full flex flex-wrap justify-center items-center gap-3">
+            <div className="w-full md:w-auto flex flex-wrap justify-center items-center gap-3">
               {Data.tokenomicsButtonsData.map((item, index) => {
                 return (
                   <button
                     key={index}
-                    className="bg-[#1C2222] h-[46px] flex justify-center items-center px-[10px] rounded-[6px]"
+                    className="bg-[#1C2222] h-[46px] flex justify-center items-center px-4 rounded-[6px]"
                   >
                     <Image src={item} alt="" width={120} height={32} />
                   </button>
@@ -109,11 +111,11 @@ const Tokenomics = () => {
                   <p className="text-[16px] sm:text-[18px] xl:text-[20px] font-inter font-thin text-[#B1B1B1]">
                     SPL Contract Address
                   </p>
-                  <div className="w-full h-[40px] bg-[#121616] flex justify-between items-center px-3 rounded-[6px]">
-                    <p className="text-[10px] sm:text-[14px] font-medium text-th-brand font-inter">
+                  <div className="w-full overflow-scroll hideScrollBar h-[40px] bg-[#121616] flex justify-between items-center px-3 rounded-[6px]">
+                    <p className="min-w-[280px] sm:min-w-[400px] text-[10px] sm:text-[14px] font-medium text-th-brand font-inter">
                       GHvFFSZ9BctWsEc5nujR1MTmmJWY7tgQz2AXE6WVFtGN
                     </p>
-                    <button className="w-[24px] h-[24px] bg-[#FF810A] flex justify-center items-center rounded-full">
+                    <button className="min-w-[24px] h-[24px] bg-[#FF810A] flex justify-center items-center rounded-full">
                       <Image
                         src="/assets/copyIcon.svg"
                         width={14}
@@ -161,10 +163,39 @@ const Tokenomics = () => {
                       />
                     )}
 
+                    <defs>
+                      <linearGradient
+                        id="gradient1"
+                        x1="0"
+                        y1="0"
+                        x2="1"
+                        y2="0"
+                      >
+                        <stop offset="0%" stopColor="rgba(255,129,10,1)" />
+                        <stop offset="100%" stopColor="rgba(255,171,92,1)" />
+                      </linearGradient>
+                      <linearGradient
+                        id="gradient2"
+                        x1="0"
+                        y1="0"
+                        x2="1"
+                        y2="0"
+                      >
+                        <stop offset="0%" stopColor="rgba(28,34,34,1)" />
+                        <stop offset="100%" stopColor="rgba(46,56,56,1) " />
+                      </linearGradient>
+                    </defs>
+
                     {/* <Tooltip /> */}
                     <Bar dataKey="uv" fill="#8884d8">
-                      <Cell fill="#FF810A" width={isSmallScreen ? 140 : 150} />
-                      <Cell fill="#1C2222" width={isSmallScreen ? 140 : 150} />
+                      <Cell
+                        fill={firstCellGradient}
+                        width={isSmallScreen ? 140 : 155}
+                      />
+                      <Cell
+                        fill={secCellGradient}
+                        width={isSmallScreen ? 140 : 155}
+                      />
                       <LabelList
                         fill="white"
                         offset="16"
@@ -197,7 +228,7 @@ const Tokenomics = () => {
           </div>
 
           {/* some history ---------------  */}
-          <div className="w-full h-full flex flex-col p-4 bg-[#121616] gap-4 xl:gap-6 order-4">
+          <div className="w-full h-full flex flex-col p-4 bg-[#121616] gap-4 xl:gap-6 order-4 rounded-[6px]">
             <p className="text-[20px] font-semibold font-inter text-th-brand">
               Some history
             </p>
@@ -214,7 +245,7 @@ const Tokenomics = () => {
               <p className="text-[16px] font-thin font-inter text-th-brand">
                 Oh, we also burned{" "}
               </p>
-              <p className="text-[20px] font-semibold font-inter text-[#FF810A]">
+              <p className="text-[20px] font-semibold font-inter bg-gradient-to-r from-[#FF810A] to-[#DE0269] text-transparent bg-clip-text">
                 701,599,000 SOLAPE (70.16%).
               </p>
             </div>
@@ -244,7 +275,7 @@ const Tokenomics = () => {
                     className="object-contain"
                     alt=""
                   />
-                  <p className="text-[#FF810A] font-inter font-semibold text-[40px] leading-3">
+                  <p className="bg-gradient-to-r from-[#FF810A] to-[#FFAB5C] text-transparent bg-clip-text font-inter font-semibold text-[40px] ">
                     {item.value}
                   </p>
                 </div>

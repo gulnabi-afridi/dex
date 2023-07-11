@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <Wrapper style="bg-th-bkg-2">
-      <div className="w-full h-[100px] flex justify-between items-center">
+      <div className="w-full h-[64px] md:h-[100px] flex justify-between items-center">
         {/* logo */}
         <div className="w-[150px] h-[60px] relative">
           <Image
@@ -58,7 +58,7 @@ const Header = () => {
           <Hamburger
             color="white"
             rounded
-            size={34}
+            size={26}
             toggled={isOpen}
             toggle={setIsOpen}
           />

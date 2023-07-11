@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import FillButton from "@/components/shared/Buttons/FillButton";
 import { LuChevronDown } from "react-icons/lu";
 import { Data } from "@/data/JSON";
+import { RxCross2 } from "react-icons/rx";
 
 // ====> import for drawer and humburger
 import { Spin as Hamburger } from "hamburger-react";
@@ -80,7 +81,26 @@ const Header2 = () => {
           direction="right"
           className="drawer"
           style={{ background: "#1c2222" }}
-        ></Drawer>
+        >
+          <div className="flex flex-col justify-center items-center">
+            {/* ===> top bar */}
+            <div className="w-full flex justify-between items-center p-8">
+              {/* ===> logo */}
+              <div className="w-[155px] h-[60px] relative">
+                <Image
+                  src="/assets/logo.svg"
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <RxCross2
+                onClick={() => setIsOpen(false)}
+                className="text-[43px] text-th-brand "
+              />
+            </div>
+          </div>
+        </Drawer>
       </div>
     </div>
   );

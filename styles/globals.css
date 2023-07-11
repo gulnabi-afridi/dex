@@ -112,4 +112,6 @@ iframe {
   --gradient-2: theme("colors.light-theme.gradient-2");
 }
 
-/* bar style */
+.hideScrollBar::-webkit-scrollbar {
+  display: none;
+}
