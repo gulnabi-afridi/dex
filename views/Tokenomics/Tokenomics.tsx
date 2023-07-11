@@ -190,11 +190,11 @@ const Tokenomics = () => {
                     <Bar dataKey="uv" fill="#8884d8">
                       <Cell
                         fill={firstCellGradient}
-                        width={isSmallScreen ? 140 : 155}
+                        width={isSmallScreen ? 140 : 152}
                       />
                       <Cell
                         fill={secCellGradient}
-                        width={isSmallScreen ? 140 : 155}
+                        width={isSmallScreen ? 140 : 152}
                       />
                       <LabelList
                         fill="white"
