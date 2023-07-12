@@ -138,11 +138,7 @@ const Tokenomics = () => {
             <div className="w-full h-[450px] md:h-full flex flex-col bg-[#121616] py-8 sm:pt-8 sm:pb-0 rounded-[6px]">
               <div className="w-full h-[calc(100%-90px)] pr-2">
                 <ResponsiveContainer width="100%" height="99%">
-                  <BarChart
-                    width={150}
-                    height={40}
-                    data={Data.tokenomicsGraphData}
-                  >
+                  <BarChart data={Data.tokenomicsGraphData}>
                     {!isSmallScreen && (
                       <XAxis
                         tick={false}
@@ -198,6 +194,7 @@ const Tokenomics = () => {
                       />
                       <LabelList
                         fill="white"
+                        fontWeight={600}
                         offset="16"
                         dataKey="name"
                         position="top"
@@ -206,6 +203,7 @@ const Tokenomics = () => {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
+
               <div className="w-full h-[90px] grid grid-cols-[1fr,1fr] ">
                 <div className="w-full flex flex-col gap-1 sm:gap-2 justify-center items-center mt-0 sm:-mt-12 ml-0 sm:ml-10">
                   <p className="text-[#B1B1B1] text-[20px] font-inter font-thin">

@@ -10,11 +10,14 @@ interface props {
 
 const Layout = ({ children }: props) => {
   const Router = useRouter();
-  console.log(Router.pathname);
 
   return (
     <React.Fragment>
-      {Router.pathname === "/tokenomics" ? <Header2 /> : <Header />}
+      {Router.pathname === "/tokenomics" || Router.pathname === "/markets" ? (
+        <Header2 />
+      ) : (
+        <Header />
+      )}
       {children}
       <Footer />
     </React.Fragment>
