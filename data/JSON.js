@@ -1,5 +1,68 @@
 import Link from "next/link";
 
+const movementGraphData = [
+  {
+    name: "Page A",
+    value: 1400,
+  },
+  {
+    name: "Page B",
+    value: 3000,
+  },
+  {
+    name: "Page C",
+    value: 1950,
+  },
+  {
+    name: "Page B",
+    value: 1900,
+  },
+  {
+    name: "Page C",
+    value: 3050,
+  },
+  {
+    name: "Page C",
+    value: 1200,
+  },
+  {
+    name: "Page C",
+    value: 1850,
+  },
+  {
+    name: "Page D",
+    value: 3000,
+  },
+  {
+    name: "Page E",
+    value: 1850,
+  },
+  {
+    name: "Page F",
+    value: 3000,
+  },
+  {
+    name: "Page E",
+    value: 4000,
+  },
+  {
+    name: "Page F",
+    value: 1240,
+  },
+  {
+    name: "Page F",
+    value: 2800,
+  },
+  {
+    name: "Page F",
+    value: 1400,
+  },
+  {
+    name: "Page G",
+    value: 2000,
+  },
+];
+
 export const Data = {
   navibar: [
     {
@@ -378,4 +441,247 @@ export const Data = {
       text: "OG airdrop value (current)",
     },
   ],
+  marketsData: {
+    tableColumn: [
+      {
+        colName: "",
+        isExpandIcon: false,
+        timeLabel: false,
+        timeLabelValue: "",
+      },
+      {
+        colName: "name",
+        isExpandIcon: false,
+        timeLabel: false,
+        timeLabelValue: "",
+      },
+      {
+        colName: "pair",
+        isExpandIcon: false,
+        timeLabel: false,
+        timeLabelValue: "",
+      },
+      {
+        colName: "price",
+        isExpandIcon: false,
+        timeLabel: false,
+        timeLabelValue: "",
+      },
+      {
+        colName: "delta",
+        isExpandIcon: true,
+        timeLabel: true,
+        timeLabelValue: "24h",
+      },
+      {
+        colName: "volume",
+        isExpandIcon: true,
+        timeLabel: true,
+        timeLabelValue: "24h",
+      },
+      {
+        colName: "market cap",
+        isExpandIcon: true,
+        timeLabel: false,
+        timeLabelValue: "",
+      },
+      {
+        colName: "movement",
+        isExpandIcon: false,
+        timeLabel: true,
+        timeLabelValue: "7D",
+      },
+      {
+        colName: "",
+        isExpandIcon: false,
+        timeLabel: false,
+        timeLabelValue: "",
+      },
+    ],
+
+    tableRows: [
+      {
+        name: {
+          image: "/assets/apex.png",
+          coinName: "ApeXit Finance",
+          coinType: "APEX",
+        },
+        pair: "SOLAPE/USDC",
+        price: "0.04240",
+        delta: "12.5",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/bmbo.png",
+          coinName: "Bamboo Coin",
+          coinType: "ATLAS",
+        },
+        pair: "SOLAPE/USDC",
+        price: "0.04240",
+        delta: "4.5",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/cream.png",
+          coinName: "Cream Finance",
+          coinType: "CREAM",
+        },
+        pair: "CREAM/USDC",
+        price: "0.04240",
+        delta: "20.8",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/degn.png",
+          coinName: "Degen Dex",
+          coinType: "DEGN",
+        },
+        pair: "DEGN/USDC",
+        price: "0.04240",
+        delta: "10.0",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/eth.png",
+          coinName: "Ethereum",
+          coinType: "ETH",
+        },
+        pair: "FAB/USDC",
+        price: "0.04240",
+        delta: "9.4",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/fab.png",
+          coinName: "Fabric",
+          coinType: "FAB",
+        },
+        pair: "CREAM/USDC",
+        price: "0.04240",
+        delta: "20.8",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/eth.png",
+          coinName: "Ethereum",
+          coinType: "ETH",
+        },
+        pair: "FAB/USDC",
+        price: "0.04240",
+        delta: "9.4",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/fab.png",
+          coinName: "Fabric",
+          coinType: "FAB",
+        },
+        pair: "CREAM/USDC",
+        price: "0.04240",
+        delta: "20.8",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/atlas.png",
+          coinName: "ApeXit Finance",
+          coinType: "APEX",
+        },
+        pair: "SOLAPE/USDC",
+        price: "0.04240",
+        delta: "12.5",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/bmbo.png",
+          coinName: "Bamboo Coin",
+          coinType: "ATLAS",
+        },
+        pair: "SOLAPE/USDC",
+        price: "0.04240",
+        delta: "4.5",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/ftx.png",
+          coinName: "FTX Token",
+          coinType: "FTT",
+        },
+        pair: "CREAM/USDC",
+        price: "0.04240",
+        delta: "20.8",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/eth.png",
+          coinName: "Ethereum",
+          coinType: "ETH",
+        },
+        pair: "FAB/USDC",
+        price: "0.04240",
+        delta: "9.4",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/front.png",
+          coinName: "Frontier",
+          coinType: "FRONT",
+        },
+        pair: "CREAM/USDC",
+        price: "0.04240",
+        delta: "20.8",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+      {
+        name: {
+          image: "/assets/eth.png",
+          coinName: "Ethereum",
+          coinType: "ETH",
+        },
+        pair: "FAB/USDC",
+        price: "0.04240",
+        delta: "9.4",
+        volume: "2,240,844",
+        marketCap: "26,424,888",
+        movement: movementGraphData,
+      },
+    ],
+  },
 };

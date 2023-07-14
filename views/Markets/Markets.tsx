@@ -10,6 +10,7 @@ import Image from "next/image";
 import { Checkbox } from "@mui/material";
 import { Pagination } from "@mui/material";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
+import { Data } from "@/data/JSON";
 
 const Markets = () => {
   const [filter, setFilter] = useState({
@@ -29,7 +30,7 @@ const Markets = () => {
 
         <div className="w-full max-w-[750px] gap-2 grid grid-cols-[1.4fr,2fr,1.5fr]">
           {/* all + favorite button */}
-          <div className="w-full h-[60px] bg-[#121616] flex justify-center items-center rounded-[8px] p-[7px]">
+          <div className="w-full h-[57px] bg-[#121616] flex justify-center items-center rounded-[8px] p-[7px]">
             <button
               onClick={() => {
                 setFilter({ all: true, favorite: false });
@@ -57,22 +58,22 @@ const Markets = () => {
           </div>
 
           {/* search input */}
-          <div className="w-full grid grid-cols-[0.2fr,1fr] h-[60px] justify-center items-center bg-[#121616] rounded-[8px]">
+          <div className="w-full grid grid-cols-[0.2fr,1fr] h-[57px] justify-center items-center bg-[#121616] rounded-[8px]">
             <button className="w-full flex justify-center items-center">
               <AiOutlineSearch className="text-[#676767] text-[27px]" />
             </button>
             <input
-              className="bg-transparent text-[20px] font-inter font-thin text-th-brand outline-none placeholder:text-[20px] placeholder:font-inter placeholder:font-thin placeholder:text-[#676767]"
+              className="bg-transparent text-[18px] font-inter font-thin text-th-brand outline-none placeholder:text-[18px] placeholder:font-inter placeholder:font-thin placeholder:text-[#676767]"
               placeholder="Search ticker or name..."
             />
           </div>
 
           {/* sort by volume select box */}
-          <div className="w-full h-[60px] bg-[#2E3838] cursor-pointer flex justify-center items-center gap-2 rounded-[8px]">
-            <p className="text-[20px] font-inter font-thin text-th-brand">
+          <div className="w-full h-[56px] bg-[#2E3838] cursor-pointer flex justify-center items-center gap-2 rounded-[8px]">
+            <p className="text-[18px] font-inter font-thin text-th-brand">
               Sorted by Volume
             </p>
-            <FiChevronDown className="text-th-brand text-[28px] cursor-pointer" />
+            <FiChevronDown className="text-th-brand text-[26px] cursor-pointer" />
           </div>
         </div>
       </div>
@@ -80,11 +81,13 @@ const Markets = () => {
       {/* table ------------------------ */}
       <div className="w-full px-4 sm:px-10 bg-th-bkg-2">
         {/* table column */}
+
         <div className="w-full h-[72px] grid grid-cols-[0.3fr,1.2fr,1fr,0.8fr,0.8fr,0.8fr,0.8fr,1.2fr,0.2fr] justify-center items-center">
-          {tableColumn.map((item, index) => {
+          {Data.marketsData.tableColumn.map((item, index) => {
             return (
               <>
-                {index === 0 || tableColumn.length === index + 1 ? (
+                {index === 0 ||
+                Data.marketsData.tableColumn.length === index + 1 ? (
                   <div className="w-full flex justify-center items-center h-[40px]">
                     {item.colName}
                   </div>
@@ -112,7 +115,7 @@ const Markets = () => {
         </div>
         {/* table row */}
         <div className="w-full flex flex-col">
-          {tableRows.map((item, index) => {
+          {Data.marketsData.tableRows.map((item, index) => {
             return (
               <div
                 key={index}
@@ -239,316 +242,11 @@ const Markets = () => {
       </div>
 
       {/* pagination --------------- */}
-      {/* <div className="w-full bg-th-bkg-2 h-[150px] flex justify-center items-center">
+      <div className="w-full bg-th-bkg-2 h-[150px] flex justify-center items-center">
         <Pagination count={10} shape="rounded" />
-      </div> */}
+      </div>
     </div>
   );
 };
-
-const tableColumn = [
-  {
-    colName: "",
-    isExpandIcon: false,
-    timeLabel: false,
-    timeLabelValue: "",
-  },
-  {
-    colName: "name",
-    isExpandIcon: false,
-    timeLabel: false,
-    timeLabelValue: "",
-  },
-  {
-    colName: "pair",
-    isExpandIcon: false,
-    timeLabel: false,
-    timeLabelValue: "",
-  },
-  {
-    colName: "price",
-    isExpandIcon: false,
-    timeLabel: false,
-    timeLabelValue: "",
-  },
-  {
-    colName: "delta",
-    isExpandIcon: true,
-    timeLabel: true,
-    timeLabelValue: "24h",
-  },
-  {
-    colName: "volume",
-    isExpandIcon: true,
-    timeLabel: true,
-    timeLabelValue: "24h",
-  },
-  {
-    colName: "market cap",
-    isExpandIcon: true,
-    timeLabel: false,
-    timeLabelValue: "",
-  },
-  {
-    colName: "movement",
-    isExpandIcon: false,
-    timeLabel: true,
-    timeLabelValue: "7D",
-  },
-  {
-    colName: "",
-    isExpandIcon: false,
-    timeLabel: false,
-    timeLabelValue: "",
-  },
-];
-
-const movementData = [
-  {
-    name: "Page A",
-    value: 1400,
-  },
-  {
-    name: "Page B",
-    value: 3000,
-  },
-  {
-    name: "Page C",
-    value: 1950,
-  },
-  {
-    name: "Page B",
-    value: 1900,
-  },
-  {
-    name: "Page C",
-    value: 3050,
-  },
-  {
-    name: "Page C",
-    value: 1200,
-  },
-  {
-    name: "Page C",
-    value: 1850,
-  },
-  {
-    name: "Page D",
-    value: 3000,
-  },
-  {
-    name: "Page E",
-    value: 1850,
-  },
-  {
-    name: "Page F",
-    value: 3000,
-  },
-  {
-    name: "Page E",
-    value: 4000,
-  },
-  {
-    name: "Page F",
-    value: 1240,
-  },
-  {
-    name: "Page F",
-    value: 2800,
-  },
-  {
-    name: "Page F",
-    value: 1400,
-  },
-  {
-    name: "Page G",
-    value: 2000,
-  },
-];
-
-const tableRows = [
-  {
-    name: {
-      image: "/assets/apex.png",
-      coinName: "ApeXit Finance",
-      coinType: "APEX",
-    },
-    pair: "SOLAPE/USDC",
-    price: "0.04240",
-    delta: "12.5",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/bmbo.png",
-      coinName: "Bamboo Coin",
-      coinType: "ATLAS",
-    },
-    pair: "SOLAPE/USDC",
-    price: "0.04240",
-    delta: "4.5",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/cream.png",
-      coinName: "Cream Finance",
-      coinType: "CREAM",
-    },
-    pair: "CREAM/USDC",
-    price: "0.04240",
-    delta: "20.8",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/degn.png",
-      coinName: "Degen Dex",
-      coinType: "DEGN",
-    },
-    pair: "DEGN/USDC",
-    price: "0.04240",
-    delta: "10.0",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/eth.png",
-      coinName: "Ethereum",
-      coinType: "ETH",
-    },
-    pair: "FAB/USDC",
-    price: "0.04240",
-    delta: "9.4",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/fab.png",
-      coinName: "Fabric",
-      coinType: "FAB",
-    },
-    pair: "CREAM/USDC",
-    price: "0.04240",
-    delta: "20.8",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/eth.png",
-      coinName: "Ethereum",
-      coinType: "ETH",
-    },
-    pair: "FAB/USDC",
-    price: "0.04240",
-    delta: "9.4",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/fab.png",
-      coinName: "Fabric",
-      coinType: "FAB",
-    },
-    pair: "CREAM/USDC",
-    price: "0.04240",
-    delta: "20.8",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/atlas.png",
-      coinName: "ApeXit Finance",
-      coinType: "APEX",
-    },
-    pair: "SOLAPE/USDC",
-    price: "0.04240",
-    delta: "12.5",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/bmbo.png",
-      coinName: "Bamboo Coin",
-      coinType: "ATLAS",
-    },
-    pair: "SOLAPE/USDC",
-    price: "0.04240",
-    delta: "4.5",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/ftx.png",
-      coinName: "FTX Token",
-      coinType: "FTT",
-    },
-    pair: "CREAM/USDC",
-    price: "0.04240",
-    delta: "20.8",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/eth.png",
-      coinName: "Ethereum",
-      coinType: "ETH",
-    },
-    pair: "FAB/USDC",
-    price: "0.04240",
-    delta: "9.4",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/front.png",
-      coinName: "Frontier",
-      coinType: "FRONT",
-    },
-    pair: "CREAM/USDC",
-    price: "0.04240",
-    delta: "20.8",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-  {
-    name: {
-      image: "/assets/eth.png",
-      coinName: "Ethereum",
-      coinType: "ETH",
-    },
-    pair: "FAB/USDC",
-    price: "0.04240",
-    delta: "9.4",
-    volume: "2,240,844",
-    marketCap: "26,424,888",
-    movement: movementData,
-  },
-];
 
 export default Markets;
