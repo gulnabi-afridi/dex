@@ -115,3 +115,33 @@ iframe {
 .hideScrollBar::-webkit-scrollbar {
   display: none;
 }
+
+/* =====> pagination global style */
+.MuiPagination-ul {
+  gap: 8px !important;
+}
+.MuiPagination-ul > :first-child svg {
+  font-size: 44px !important;
+  color: white !important;
+}
+.MuiPagination-ul > :last-child svg {
+  font-size: 44px !important;
+  color: white !important;
+}
+
+.MuiPaginationItem-root {
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  color: #676767 !important;
+}
+
+.MuiButtonBase-root[aria-current="true"] {
+  color: white !important;
+  width: 45px !important;
+  height: 42px !important;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 129, 10, 1) 0%,
+    rgba(255, 171, 92, 1) 100%
+  ) !important;
+}
