@@ -81,7 +81,6 @@ const Markets = () => {
       {/* table ------------------------ */}
       <div className="w-full px-4 sm:px-10 bg-th-bkg-2">
         {/* table column */}
-
         <div className="w-full h-[72px] grid grid-cols-[0.3fr,1.2fr,1fr,0.8fr,0.8fr,0.8fr,0.8fr,1.2fr,0.2fr] justify-center items-center">
           {Data.marketsData.tableColumn.map((item, index) => {
             return (
@@ -113,6 +112,7 @@ const Markets = () => {
             );
           })}
         </div>
+
         {/* table row */}
         <div className="w-full flex flex-col">
           {Data.marketsData.tableRows.map((item, index) => {

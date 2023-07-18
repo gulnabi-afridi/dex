@@ -4,8 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import FillButton from "@/components/shared/Buttons/FillButton";
 import { LuChevronDown } from "react-icons/lu";
+import { PiLinkSimpleBold } from "react-icons/pi";
 import { Data } from "@/data/JSON";
 import { RxCross2 } from "react-icons/rx";
+import CustomSwitch from "@/components/shared/Switch/Switch";
 
 // ====> import for drawer and humburger
 import { Spin as Hamburger } from "hamburger-react";
@@ -15,6 +17,7 @@ import "react-modern-drawer/dist/index.css";
 const Header2 = () => {
   const Router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(false);
 
   return (
     <div className="w-full flex justify-between items-center bg-th-bkg-2 h-[64px] px-4 sm:px-10">
@@ -59,11 +62,35 @@ const Header2 = () => {
           styles="w-[120px] h-[40px] bg-[#2E3838] text-th-brand font-inter font-medium text-[16px]"
         />
         {/* ===> logo */}
-        <div className="flex justify-center items-center gap-2 cursor-pointer">
-          <div className="w-[40px] h-[40px] bg-th-gradient-1 rounded-full flex justify-center items-center">
-            <Image src="/assets/logo2.svg" width={24} height={24} alt="" />
+        <div className="relative">
+          <div
+            onClick={() => setShowDropDown(!showDropDown)}
+            className="flex justify-center items-center gap-2 cursor-pointer "
+          >
+            <div className="w-[40px] h-[40px] bg-th-gradient-1 rounded-full flex justify-center items-center">
+              <Image src="/assets/logo2.svg" width={24} height={24} alt="" />
+            </div>
+            <LuChevronDown className="text-th-brand text-[24px]" />
           </div>
-          <LuChevronDown className="text-th-brand text-[24px]" />
+
+          {/* =====> drop down */}
+          {showDropDown && (
+            <div className="w-[159px] flex flex-col p-4 gap-3 bg-gradient-to-r from-[#323E3E] to-[#181E1E] h-[116px] absolute top-12 -left-24">
+              <div className="flex justify-center items-center gap-1">
+                <PiLinkSimpleBold className="text-[22px] text-th-brand-secondary" />
+                <p className="font-inter text-th-brand-secondary text-[16px] font-normal">
+                  DbK2...FRgP
+                </p>
+              </div>
+              {/* version */}
+              <div className="w-full flex justify-between items-center">
+                <p className="text-th-brand text-[15px] font-inter font-normal">
+                  Lite version
+                </p>
+                <CustomSwitch />
+              </div>
+            </div>
+          )}
         </div>
       </div>
       {/* ====> hamburger + drawer for small screen */}
