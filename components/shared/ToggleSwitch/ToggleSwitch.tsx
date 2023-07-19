@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import Switch, { SwitchProps } from "@mui/material/Switch";
 
-const CustomSwitch = () => {
+const ToggleSwitch = () => {
   const AntSwitch = styled(Switch)(({ theme }) => ({
     width: 34,
     height: 18,
@@ -32,6 +32,7 @@ const CustomSwitch = () => {
       boxShadow: "0 2px 4px 0 rgb(0 35 11 / 20%)",
       width: 14,
       height: 14,
+      color: "#2E3838",
       borderRadius: 10,
       transition: theme.transitions.create(["width"], {
         duration: 200,
@@ -55,4 +56,4 @@ const CustomSwitch = () => {
   );
 };
 
-export default CustomSwitch;
+export default ToggleSwitch;

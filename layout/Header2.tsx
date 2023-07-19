@@ -7,7 +7,9 @@ import { LuChevronDown } from "react-icons/lu";
 import { PiLinkSimpleBold } from "react-icons/pi";
 import { Data } from "@/data/JSON";
 import { RxCross2 } from "react-icons/rx";
-import CustomSwitch from "@/components/shared/Switch/Switch";
+import ToggleSwitch from "@/components/shared/ToggleSwitch/ToggleSwitch";
+import UseOutSideClick from "@/hooks/OutSideClick";
+import DropDown from "@/components/shared/DropDown/DropDown";
 
 // ====> import for drawer and humburger
 import { Spin as Hamburger } from "hamburger-react";
@@ -18,6 +20,7 @@ const Header2 = () => {
   const Router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [showDropDown, setShowDropDown] = useState(false);
+  const [isTokenomicsDropDown, setIsTokenomicsDropDown] = useState(false);
 
   return (
     <div className="w-full flex justify-between items-center bg-th-bkg-2 h-[64px] px-4 sm:px-10">
@@ -33,24 +36,62 @@ const Header2 = () => {
           />
         </div>
         {/* links */}
+
         <div className="hidden lg:flex justify-center items-center gap-9">
           {Data.header2Data.map((item, index) => {
             return (
-              <Link
-                key={index}
-                href={item.path}
-                className={`capitalize text-th-brand text-[16px] font-inter ${
-                  item.path === Router.pathname ? "font-medium" : "font-thin"
-                }  relative`}
-              >
-                {item.name}
-                {/* new badge-------------- */}
-                {item.isNew && (
-                  <p className="text-th-bkg-2 bg-th-gradient-1 flex justify-center items-center text-[10px] leading-0 font-medium px-[5px] rounded-[10px] font-inter absolute -top-2 -right-5">
-                    New
-                  </p>
+              <>
+                {item.name === "token" ? (
+                  <UseOutSideClick
+                    key={index}
+                    Event={() => setIsTokenomicsDropDown(false)}
+                    style="relative w-full"
+                  >
+                    <button
+                      onClick={() => {
+                        setIsTokenomicsDropDown(!isTokenomicsDropDown);
+                      }}
+                      className={`capitalize relative text-th-brand text-[16px] font-inter ${
+                        item.path === Router.pathname
+                          ? "font-medium"
+                          : "font-thin"
+                      } `}
+                    >
+                      {item.name}
+                      {/* new badge-------------- */}
+                      {item.isNew && (
+                        <p className="text-th-bkg-2 bg-th-gradient-1 flex justify-center items-center text-[10px] leading-0 font-medium px-[5px] rounded-[10px] font-inter absolute -top-2 -right-5">
+                          New
+                        </p>
+                      )}
+                    </button>
+                    {isTokenomicsDropDown && (
+                      <DropDown
+                        setIsDropdown={() => setIsTokenomicsDropDown(false)}
+                        items={["buy solape", "tokenomics"]}
+                      />
+                    )}
+                  </UseOutSideClick>
+                ) : (
+                  <Link
+                    key={index}
+                    href="#"
+                    className={`capitalize relative text-th-brand text-[16px] font-inter ${
+                      item.path === Router.pathname
+                        ? "font-medium"
+                        : "font-thin"
+                    } `}
+                  >
+                    {item.name}
+                    {/* new badge-------------- */}
+                    {item.isNew && (
+                      <p className="text-th-bkg-2 bg-th-gradient-1 flex justify-center items-center text-[10px] leading-0 font-medium px-[5px] rounded-[10px] font-inter absolute -top-2 -right-5">
+                        New
+                      </p>
+                    )}
+                  </Link>
                 )}
-              </Link>
+              </>
             );
           })}
         </div>
@@ -62,23 +103,27 @@ const Header2 = () => {
           styles="w-[120px] h-[40px] bg-[#2E3838] text-th-brand font-inter font-medium text-[16px]"
         />
         {/* ===> logo */}
-        <div className="relative">
-          <div
+        <UseOutSideClick style="relative" Event={() => setShowDropDown(false)}>
+          <button
             onClick={() => setShowDropDown(!showDropDown)}
             className="flex justify-center items-center gap-2 cursor-pointer "
           >
             <div className="w-[40px] h-[40px] bg-th-gradient-1 rounded-full flex justify-center items-center">
               <Image src="/assets/logo2.svg" width={24} height={24} alt="" />
             </div>
-            <LuChevronDown className="text-th-brand text-[24px]" />
-          </div>
+            {showDropDown ? (
+              <LuChevronDown className="text-th-brand text-[24px] rotate-180" />
+            ) : (
+              <LuChevronDown className="text-th-brand text-[24px]" />
+            )}
+          </button>
 
           {/* =====> drop down */}
           {showDropDown && (
-            <div className="w-[159px] flex flex-col p-4 gap-3 bg-gradient-to-r from-[#323E3E] to-[#181E1E] h-[116px] absolute top-12 -left-24">
+            <div className="w-[159px] flex flex-col p-4 gap-3 bg-gradient-to-r from-[#323E3E] to-[#181E1E] absolute top-12 -left-24 rounded-[8px]">
               <div className="flex justify-center items-center gap-1">
-                <PiLinkSimpleBold className="text-[22px] text-th-brand-secondary" />
-                <p className="font-inter text-th-brand-secondary text-[16px] font-normal">
+                <PiLinkSimpleBold className="text-[19px] text-th-brand-secondary" />
+                <p className="font-inter text-th-brand-secondary text-[16px] font-thin">
                   DbK2...FRgP
                 </p>
               </div>
@@ -87,12 +132,18 @@ const Header2 = () => {
                 <p className="text-th-brand text-[15px] font-inter font-normal">
                   Lite version
                 </p>
-                <CustomSwitch />
+                <ToggleSwitch />
               </div>
+              {/* disconnect button */}
+              <FillButton
+                text="Disconnect"
+                styles="w-full h-[26px] bg-[#2E3838] text-th-brand text-[13px]"
+              ></FillButton>
             </div>
           )}
-        </div>
+        </UseOutSideClick>
       </div>
+
       {/* ====> hamburger + drawer for small screen */}
       <div className="lg:hidden flex justify-end items-center">
         <Hamburger
