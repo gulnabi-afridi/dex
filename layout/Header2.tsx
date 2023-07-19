@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import FillButton from "@/components/shared/Buttons/FillButton";
 import { LuChevronDown } from "react-icons/lu";
 import { PiLinkSimpleBold } from "react-icons/pi";
+import { BsLightningCharge } from "react-icons/bs";
+import OutlineButton from "@/components/shared/Buttons/OutlineButton";
 import { Data } from "@/data/JSON";
 import { RxCross2 } from "react-icons/rx";
 import ToggleSwitch from "@/components/shared/ToggleSwitch/ToggleSwitch";
@@ -76,7 +78,9 @@ const Header2 = () => {
                   <Link
                     key={index}
                     href="#"
-                    className={`capitalize relative text-th-brand text-[16px] font-inter ${
+                    className={`${
+                      index + 1 === Data.header2Data.length ? "hidden" : "block"
+                    } capitalize relative text-th-brand text-[16px] font-inter ${
                       item.path === Router.pathname
                         ? "font-medium"
                         : "font-thin"
@@ -158,24 +162,47 @@ const Header2 = () => {
           onClose={() => setIsOpen(false)}
           direction="right"
           className="drawer"
-          style={{ background: "#1c2222" }}
+          style={{ background: "black" }}
         >
           <div className="flex flex-col justify-center items-center">
-            {/* ===> top bar */}
-            <div className="w-full flex justify-between items-center p-8">
-              {/* ===> logo */}
-              <div className="w-[155px] h-[60px] relative">
-                <Image
-                  src="/assets/logo.svg"
-                  alt=""
-                  fill
-                  className="object-contain"
+            <div className="w-full flex bg-[#121616] p-6 flex-col gap-8">
+              {/* ===> top bar */}
+              <div className="w-full flex justify-between items-center">
+                {/* ===> logo */}
+                <div className="w-[155px] h-[60px] relative">
+                  <Image
+                    src="/assets/logo.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <RxCross2
+                  onClick={() => setIsOpen(false)}
+                  className="text-[43px] text-th-brand "
                 />
               </div>
-              <RxCross2
-                onClick={() => setIsOpen(false)}
-                className="text-[43px] text-th-brand "
+              {/* launch button */}
+              <OutlineButton
+                text="Launch app"
+                isIcon={true}
+                style="w-full sm:w-[200px] text-[24px] font-normal h-[63px] sm:h-[60px] border-th-brand text-th-brand hover:text-th-brand-secondary hover:border-th-brand-secondary group"
+                icon=<BsLightningCharge className="text-[28px] text-th-brand group-hover:text-th-hover" />
               />
+            </div>
+            {/* links */}
+            <div className="w-full flex flex-col p-6 gap-6">
+              {Data.header2Data.map((item, index) => {
+                return (
+                  <Link
+                    href={item.path}
+                    key={index}
+                    className="capitalize text-th-brand hover:text-dark-theme-hover text-[32px] font-normal"
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </Drawer>

@@ -399,6 +399,11 @@ export const Data = {
       path: "#",
       isNew: false,
     },
+    {
+      name: "buy $SOLAPE",
+      path: "#",
+      isNew: false,
+    },
   ],
   tokenomicsButtonsData: [
     "/assets/solonaFm.svg",
