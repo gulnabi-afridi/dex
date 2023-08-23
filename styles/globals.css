@@ -115,3 +115,12 @@ iframe {
 .hideScrollBar::-webkit-scrollbar {
   display: none;
 }
+
+/* custom shadows */
+.header2 {
+  background: var(
+    --gradient-bg-1,
+    linear-gradient(135deg, #090b0b 0%, #1c2222 100%)
+  );
+}
+/* custom shadows ends here */

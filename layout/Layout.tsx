@@ -13,7 +13,9 @@ const Layout = ({ children }: props) => {
 
   return (
     <React.Fragment>
-      {Router.pathname === "/tokenomics" || Router.pathname === "/markets" ? (
+      {Router.pathname === "/tokenomics" ||
+      Router.pathname === "/markets" ||
+      Router.pathname === "/dex" ? (
         <Header2 />
       ) : (
         <Header />
