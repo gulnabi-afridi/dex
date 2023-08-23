@@ -9,8 +9,13 @@ import Image from "next/image";
 import Slider from "react-slick";
 
 const Dex = () => {
+  // states ------------->
   const [navigateSlideItem, setNavigateSlideItem] = useState(true);
+  const [isFavorite, setIsFavorite] = useState(false);
 
+  //   states ends here ------------>
+
+  // configuration for slider ------------->
   const settings = {
     // infinite: true,
     // autoplay: true,
@@ -37,6 +42,8 @@ const Dex = () => {
     ],
   };
 
+  //   methods ------------->
+
   function CustomNextArrow(props: any) {
     const { onClick } = props;
     return (
@@ -52,9 +59,7 @@ const Dex = () => {
     );
   }
 
-  // states ------------->
-  const [isFavorite, setIsFavorite] = useState(false);
-  // states ends here ----------------->
+  //  methods ends here -------------->
 
   return (
     <WideWrapper style="bg-black relative">
@@ -77,11 +82,11 @@ const Dex = () => {
               <div className="flex justify-center items-center gap-2">
                 {/* name */}
                 <div className="flex justify-center items-center gap-2">
-                  <p className="text-white uppercase text-[16px] font-bold font-inter">
+                  <p className="text-white uppercase select-none text-[16px] font-bold font-inter">
                     sloape
                   </p>
                   <p className="w-[2px] h-[20px] bg-white rotate-12"></p>
-                  <p className="text-white uppercase text-[16px] font-bold font-inter">
+                  <p className="text-white uppercase select-none text-[16px] font-bold font-inter">
                     usdc
                   </p>
                 </div>
@@ -122,11 +127,11 @@ const Dex = () => {
           <p className="text-[14px] text-white font-medium font-inter">
             Gainers
           </p>
-          <div className="w-[640px]">
+          <div className="w-[580px]">
             <Slider {...settings}>
               {[0, 1, 2, 3, 4].map((item: any, index: number) => {
                 return (
-                  <div className="slider max-w-[200px] h-[70px] flex flex-col bg-[red] justify-center items-center bg-th-bkg-4 rounded-md">
+                  <div className="slider max-w-[180px] h-[70px] flex flex-col bg-[red] justify-center items-center bg-th-bkg-4 rounded-md">
                     {/* coin icon + name */}
                     <div className="flex justify-center items-center gap-1">
                       <Image

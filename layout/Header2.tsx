@@ -136,7 +136,7 @@ const Header2 = () => {
 
               {/* =====> drop down */}
               {showDropDown && (
-                <div className="w-[159px] flex flex-col p-4 gap-3 bg-gradient-to-r from-[#323E3E] to-[#181E1E] absolute top-12 -left-24 rounded-[8px]">
+                <div className="w-[159px] z-10 flex flex-col p-4 gap-3 bg-gradient-to-r from-[#323E3E] to-[#181E1E] absolute top-12 -left-24 rounded-[8px]">
                   <div className="flex justify-center items-center gap-1">
                     <PiLinkSimpleBold className="text-[19px] text-th-brand-secondary" />
                     <p className="font-inter text-th-brand-secondary text-[16px] font-thin">
