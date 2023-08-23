@@ -124,3 +124,12 @@ iframe {
   );
 }
 /* custom shadows ends here */
+/* react slick slider styles */
+.slick-prev::before {
+  display: none !important;
+}
+.slider {
+  display: flex !important;
+}
+
+/* react slick styles ends here */
