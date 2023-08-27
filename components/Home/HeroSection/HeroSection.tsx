@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 // import required modules
-import { Autoplay } from "swiper";
+import { Autoplay } from "swiper/modules";
 
 const HeroSection = () => {
   return (
