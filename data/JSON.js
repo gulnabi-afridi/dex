@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaTelegramPlane } from "react-icons/fa";
 import { BsDiscord } from "react-icons/bs";
+import * as Icons from "../SVG/Icons";
 
 const movementGraphData = [
   {
