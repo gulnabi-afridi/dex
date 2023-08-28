@@ -5,6 +5,7 @@ import { BsChevronDown, BsUbuntu } from "react-icons/bs";
 import { PiTriangleFill } from "react-icons/pi";
 import { PiCaretRightBold } from "react-icons/pi";
 import FillButton from "@/components/shared/Buttons/FillButton";
+import AssetInformationWidget from "@/components/Dex/AssetInformationWidget";
 import { Data } from "@/data/JSON";
 import * as Icons from "../../SVG/Icons";
 import Link from "next/link";
@@ -219,63 +220,7 @@ const Dex = () => {
           {/* assets information + accounts section ----> */}
           <div className="w-full flex flex-col gap-3">
             {/* assets information ------->  */}
-            <div className="w-full flex flex-col gap-2 bg-th-bkg-4 px-5 py-4 rounded-md">
-              <p className="text-[14px] text-center font-inter text-white font-semibold">
-                Asset information
-              </p>
-              {/* ticker + total supply + decimals + links here  */}
-              <div className="w-full flex justify-between items-center">
-                {/* ticker */}
-                <div className="flex flex-col gap-1">
-                  <p className="text-[14px] font-normal font-inter text-[#FFE5CC]">
-                    Ticker
-                  </p>
-                  <div className="flex gap-1 justify-center items-center">
-                    <p className="uppercase text-white text-[14px] font-medium font-inter">
-                      SOLAPE
-                    </p>
-                    <Icons.Link />
-                  </div>
-                </div>
-                {/* total supply */}
-                <div className="flex flex-col gap-1">
-                  <p className="text-[14px] font-normal font-inter text-[#FFE5CC]">
-                    Total supply
-                  </p>
-                  <p className="uppercase text-white text-[14px] font-medium font-inter">
-                    300,000,000
-                  </p>
-                </div>
-                {/* decimals */}
-                <div className="flex flex-col gap-1">
-                  <p className="text-[14px] font-normal font-inter text-[#FFE5CC]">
-                    Decimals
-                  </p>
-                  <p className="uppercase text-white text-[14px] font-medium font-inter">
-                    9
-                  </p>
-                </div>
-                {/* links */}
-                <div className="flex flex-col gap-1">
-                  <p className="text-[14px] font-normal font-inter text-[#FFE5CC]">
-                    Links
-                  </p>
-                  <div className="flex justify-center items-center gap-1">
-                    {Data.dexData.socialIcons.map((item, index) => {
-                      return (
-                        <Link
-                          key={index}
-                          href="#"
-                          className="w-[23px] h-[23px] bg-[#FFCB99] flex justify-center items-center rounded-full hover:opacity-80"
-                        >
-                          {item}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <AssetInformationWidget />
             {/* Account section ---------> */}
             <div className="w-full grid grid-cols-[2fr,1.3fr] justify-center items-center bg-th-bkg-4 px-5 py-4 rounded-md">
               <p className="text-[14px] font- text-end font-inter text-white">
@@ -416,12 +361,12 @@ const Dex = () => {
               {/* price */}
               <div className="w-full flex flex-col gap-1 mt-3">
                 <p className="text-[12px] font-normal text-th-fkg-4">Price</p>
-                <div className="w-full h-[40px] grid grid-cols-[3fr,1fr]">
+                <div className="w-full h-[40px] grid grid-cols-[3fr,1fr] bg-th-bkg-3">
                   <input
                     id="coinPrice"
                     name="coinPrice"
                     value="0.5402124"
-                    className="w-full h-full px-4 bg-th-bkg-3 focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
+                    className="w-full h-full px-4 bg-transparent focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
                   />
                   <button className="w-full flex justify-center items-center gap-2 bg-[#2E3838] rounded-md">
                     <Icons.UsdCoin />
@@ -496,7 +441,7 @@ const Dex = () => {
                     id="coinPrice"
                     name="coinPrice"
                     value="1,250,000.0000"
-                    className="w-full h-full px-4 bg-th-bkg-3 focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
+                    className="w-full h-full px-4 bg-transparent focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
                   />
                   <button className="w-full flex justify-center items-center gap-2 bg-[#2E3838] rounded-md">
                     <Icons.SolapeCoin />
@@ -508,12 +453,12 @@ const Dex = () => {
               </div>
               {/* in dollar */}
               <div className="w-full flex flex-col">
-                <div className="w-full h-[40px] grid grid-cols-[3fr,1fr]">
+                <div className="w-full h-[40px] bg-th-bkg-3 grid grid-cols-[3fr,1fr]">
                   <input
                     id="coinPrice"
                     name="coinPrice"
                     value="675,265.5000"
-                    className="w-full h-full px-4 bg-th-bkg-3 focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
+                    className="w-full h-full px-4 bg-transparent focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
                   />
                   <button className="w-full flex justify-center items-center gap-2 bg-[#2E3838] rounded-md">
                     <Icons.UsdCoin />
