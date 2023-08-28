@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { FaTelegramPlane } from "react-icons/fa";
+import { BsDiscord } from "react-icons/bs";
 
 const movementGraphData = [
   {
@@ -686,6 +689,123 @@ export const Data = {
         volume: "2,240,844",
         marketCap: "26,424,888",
         movement: movementGraphData,
+      },
+    ],
+  },
+  dexData: {
+    socialIcons: [
+      <AiOutlineTwitter className="text-[16px] text-black" />,
+      <FaTelegramPlane className="text-[16px] text-black" />,
+      <BsDiscord className="text-[16px] text-black" />,
+    ],
+    recentTradesData: [
+      {
+        price: "800,000.0000",
+        size: "1,425,249.5524",
+        tx: <Icons.Link />,
+        time: "22:01:44",
+      },
+      {
+        price: "20,000.0000",
+        size: "700,249.5524",
+        tx: <Icons.Link />,
+        time: "22:01:43",
+      },
+      {
+        price: "17,875.0000",
+        size: "100,000.0055",
+        tx: <Icons.Link />,
+        time: "22:01:42",
+      },
+      {
+        price: "5,000.0022",
+        size: "100,000.0000",
+        tx: <Icons.Link />,
+        time: "22:01:41",
+      },
+      {
+        price: "2,000.0000",
+        size: "54,645.5500",
+        tx: <Icons.Link />,
+        time: "22:01:40",
+      },
+      {
+        price: "572.4244",
+        size: "32,444.0000",
+        tx: <Icons.Link />,
+        time: "22:01:33",
+      },
+      {
+        price: "100.0000",
+        size: "16,000.0000",
+        tx: <Icons.Link />,
+        time: "22:01:31",
+      },
+      {
+        price: "20.0000",
+        size: "8,000.0000",
+        tx: <Icons.Link />,
+        time: "22:01:29",
+      },
+      {
+        price: "572.4244",
+        size: "32,444.0000",
+        tx: <Icons.Link />,
+        time: "22:01:25",
+      },
+      {
+        price: "100.0000",
+        size: "16,000.0000",
+        tx: <Icons.Link />,
+        time: "22:01:31",
+      },
+      {
+        price: "100.0000",
+        size: "16,000.0000",
+        tx: <Icons.Link />,
+        time: "22:01:31",
+      },
+      {
+        price: "20.0000",
+        size: "8,000.0000",
+        tx: <Icons.Link />,
+        time: "22:01:29",
+      },
+      {
+        price: "572.4244",
+        size: "32,444.0000",
+        tx: <Icons.Link />,
+        time: "22:01:25",
+      },
+      {
+        price: "100.0000",
+        size: "16,000.0000",
+        tx: <Icons.Link />,
+        time: "22:01:31",
+      },
+      {
+        price: "20,000.0000",
+        size: "700,249.5524",
+        tx: <Icons.Link />,
+        time: "22:01:43",
+      },
+      {
+        price: "17,875.0000",
+        size: "100,000.0055",
+        tx: <Icons.Link />,
+        time: "22:01:42",
+      },
+      {
+        price: "5,000.0022",
+        size: "100,000.0000",
+        tx: <Icons.Link />,
+        time: "22:01:41",
+      },
+      {
+        price: "2,000.0000",
+        size: "54,645.5500",
+        tx: <Icons.Link />,
+        time: "22:01:40",
       },
     ],
   },

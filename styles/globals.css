@@ -123,6 +123,12 @@ iframe {
     linear-gradient(135deg, #090b0b 0%, #1c2222 100%)
   );
 }
+.connectWalletShadow {
+  background: var(
+    --gradient-primary-3,
+    linear-gradient(135deg, #b85900 0%, #ff810a 100%)
+  );
+}
 /* custom shadows ends here */
 /* react slick slider styles */
 .slick-prev::before {

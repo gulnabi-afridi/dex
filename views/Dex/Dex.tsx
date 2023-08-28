@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import WideWrapper from "@/components/shared/ComponentWrapper/WideWrapper";
 import { HiOutlineStar } from "react-icons/hi";
-import { BsChevronDown } from "react-icons/bs";
+import { BsChevronDown, BsUbuntu } from "react-icons/bs";
 import { PiTriangleFill } from "react-icons/pi";
 import { PiCaretRightBold } from "react-icons/pi";
-import { AiOutlineTwitter } from "react-icons/ai";
-import { FaTelegramPlane } from "react-icons/fa";
-import { BsDiscord } from "react-icons/bs";
+import FillButton from "@/components/shared/Buttons/FillButton";
+import { Data } from "@/data/JSON";
 import * as Icons from "../../SVG/Icons";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,10 +13,36 @@ import Slider from "react-slick";
 
 const Dex = () => {
   // states ------------->
+
   const [navigateSlideItem, setNavigateSlideItem] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [buttonStates, setButtonStates] = useState({
+    buy: true,
+    sell: false,
+    limitOrder: true,
+    marketOrder: false,
+  });
 
-  //   states ends here ------------>
+  // states ends here ------------>
+
+  const [percentageButtons, setPercentageButtons] = useState([
+    {
+      percent: "25%",
+      state: true,
+    },
+    {
+      percent: "50%",
+      state: false,
+    },
+    {
+      percent: "75%",
+      state: false,
+    },
+    {
+      percent: "100%",
+      state: false,
+    },
+  ]);
 
   // configuration for slider ------------->
   const settings = {
@@ -62,6 +87,16 @@ const Dex = () => {
       </div>
     );
   }
+
+  const handlePercentageButtonClick = (clickedIndex: number) => {
+    const updatedPercentageButtons = percentageButtons.map((item, index) => {
+      return {
+        ...item,
+        state: index === clickedIndex,
+      };
+    });
+    setPercentageButtons(updatedPercentageButtons);
+  };
 
   //  methods ends here -------------->
 
@@ -176,11 +211,15 @@ const Dex = () => {
         {/* trading panel + assets information + accounts section ----------------> */}
         <div className="w-full h-[100vh-164px] grid gap-3 grid-cols-[2.5fr,1fr]">
           {/* trading panel  */}
-          <div className="w-full h-[30px] bg-yellow-300"></div>
+          <div className="w-full h-full bg-th-bkg-4 flex justify-center items-center rounded-md">
+            <p className="text-[40px] font-bold font-inter uppercase text-white/70">
+              Trading Engine
+            </p>
+          </div>
           {/* assets information + accounts section ----> */}
           <div className="w-full flex flex-col gap-3">
             {/* assets information ------->  */}
-            <div className="w-full flex flex-col gap-2 bg-th-bkg-4 p-3 rounded-md">
+            <div className="w-full flex flex-col gap-2 bg-th-bkg-4 px-5 py-4 rounded-md">
               <p className="text-[14px] text-center font-inter text-white font-semibold">
                 Asset information
               </p>
@@ -192,7 +231,7 @@ const Dex = () => {
                     Ticker
                   </p>
                   <div className="flex gap-1 justify-center items-center">
-                    <p className="uppercase text-white text-[14px] font-semibold font-inter">
+                    <p className="uppercase text-white text-[14px] font-medium font-inter">
                       SOLAPE
                     </p>
                     <Icons.Link />
@@ -203,7 +242,7 @@ const Dex = () => {
                   <p className="text-[14px] font-normal font-inter text-[#FFE5CC]">
                     Total supply
                   </p>
-                  <p className="uppercase text-white text-[14px] font-semibold font-inter">
+                  <p className="uppercase text-white text-[14px] font-medium font-inter">
                     300,000,000
                   </p>
                 </div>
@@ -212,7 +251,7 @@ const Dex = () => {
                   <p className="text-[14px] font-normal font-inter text-[#FFE5CC]">
                     Decimals
                   </p>
-                  <p className="uppercase text-white text-[14px] font-semibold font-inter">
+                  <p className="uppercase text-white text-[14px] font-medium font-inter">
                     9
                   </p>
                 </div>
@@ -222,12 +261,12 @@ const Dex = () => {
                     Links
                   </p>
                   <div className="flex justify-center items-center gap-1">
-                    {socialIcons.map((item, index) => {
+                    {Data.dexData.socialIcons.map((item, index) => {
                       return (
                         <Link
                           key={index}
                           href="#"
-                          className="w-[23px] h-[23px] bg-[#FFCB99] flex justify-center items-center rounded-full"
+                          className="w-[23px] h-[23px] bg-[#FFCB99] flex justify-center items-center rounded-full hover:opacity-80"
                         >
                           {item}
                         </Link>
@@ -238,12 +277,12 @@ const Dex = () => {
               </div>
             </div>
             {/* Account section ---------> */}
-            <div className="w-full grid grid-cols-[2fr,1.3fr] justify-center items-center bg-th-bkg-4 p-3 rounded-md">
+            <div className="w-full grid grid-cols-[2fr,1.3fr] justify-center items-center bg-th-bkg-4 px-5 py-4 rounded-md">
               <p className="text-[14px] font- text-end font-inter text-white">
                 Accounts
               </p>
               <div className="w-full flex justify-end">
-                <button className="text-[12px] font-inter text-white font-medium bg-[#2E3838] px-2 h-[30px] rounded-md flex justify-center items-center">
+                <button className="text-[12px] font-inter text-white font-medium bg-[#2E3838] px-2 h-[30px] rounded-md flex justify-center items-center hover:opacity-80">
                   Token accounts
                 </button>
               </div>
@@ -308,7 +347,7 @@ const Dex = () => {
               <div className="w-full col-span-2 flex justify-between mt-4">
                 <Link
                   href="#"
-                  className="text-th-fkg-4 text-[16px] font-inter font-normal whitespace-nowrap"
+                  className="text-th-fkg-4 text-[16px] font-inter font-normal whitespace-nowrap hover:opacity-80"
                 >
                   Need a Solana wallet?
                 </Link>
@@ -332,15 +371,255 @@ const Dex = () => {
             </div>
           </div>
         </div>
+        {/* order book + connect wallet + recent trades ------------------------> */}
+        <div className="w-full grid grid-cols-3 gap-3 mt-3">
+          {/* order book --------->  */}
+          <div className="w-full"></div>
+          {/* connect wallet --------->  */}
+          <div className="w-full p-2 bg-th-bkg-4 rounded-md">
+            {/* buy and sell button */}
+            <div className="w-full grid grid-cols-2">
+              <button
+                onClick={() =>
+                  setButtonStates({
+                    ...buttonStates,
+                    buy: !buttonStates.buy,
+                    sell: false,
+                  })
+                }
+                className={`w-full h-[40px] flex justify-center items-center text-[14px] font-inter font-semibold ${
+                  buttonStates.buy
+                    ? "text-[#0AD171] border-b-2 border-[#0AD171]"
+                    : "text-th-fkg-4"
+                }`}
+              >
+                Buy
+              </button>
+              <button
+                onClick={() =>
+                  setButtonStates({
+                    ...buttonStates,
+                    sell: !buttonStates.sell,
+                    buy: false,
+                  })
+                }
+                className={`w-full h-[40px] flex justify-center items-center text-[14px] font-inter font-semibold text-th-fkg-4 ${
+                  buttonStates.sell
+                    ? "text-[#0AD171] border-b-2 border-[#0AD171]"
+                    : "text-th-fkg-4"
+                }`}
+              >
+                Sell
+              </button>
+            </div>
+            <div className="w-full flex flex-col gap-2 px-3">
+              {/* price */}
+              <div className="w-full flex flex-col gap-1 mt-3">
+                <p className="text-[12px] font-normal text-th-fkg-4">Price</p>
+                <div className="w-full h-[40px] grid grid-cols-[3fr,1fr]">
+                  <input
+                    id="coinPrice"
+                    name="coinPrice"
+                    value="0.5402124"
+                    className="w-full h-full px-4 bg-th-bkg-3 focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
+                  />
+                  <button className="w-full flex justify-center items-center gap-2 bg-[#2E3838] rounded-md">
+                    <Icons.UsdCoin />
+                    <p className="text-[12px] font-normal font-inter text-white">
+                      USDC
+                    </p>
+                  </button>
+                </div>
+              </div>
+              {/* limit order + market order button*/}
+              <div className="w-full grid grid-cols-2 h-[40px] bg-th-bkg-3 rounded-md p-1">
+                <button
+                  onClick={() =>
+                    setButtonStates({
+                      ...buttonStates,
+                      limitOrder: true,
+                      marketOrder: false,
+                    })
+                  }
+                  className={`w-full flex gap-2 justify-center items-center rounded-md ${
+                    buttonStates.limitOrder
+                      ? "text-white bg-[#2E3838]"
+                      : "text-[#676767] bg-transparent"
+                  }`}
+                >
+                  {buttonStates.limitOrder ? (
+                    <Icons.LimitOrder fill="#FFFAF5" />
+                  ) : (
+                    <Icons.LimitOrder fill="#676767" />
+                  )}
+                  <p
+                    className={`text-[12px] ${
+                      buttonStates.limitOrder ? "text-white" : "text-[#676767]"
+                    } font-normal font-inter`}
+                  >
+                    Limit order
+                  </p>
+                </button>
+                <button
+                  onClick={() =>
+                    setButtonStates({
+                      ...buttonStates,
+                      marketOrder: true,
+                      limitOrder: false,
+                    })
+                  }
+                  className={`w-full flex gap-2 justify-center items-center rounded-md ${
+                    buttonStates.marketOrder
+                      ? "text-white bg-[#2E3838]"
+                      : "text-[#676767] bg-transparent"
+                  }`}
+                >
+                  {buttonStates.marketOrder ? (
+                    <Icons.MarketOrder fill="#FFFAF5" />
+                  ) : (
+                    <Icons.MarketOrder fill="#676767" />
+                  )}
+                  <p
+                    className={`text-[12px] ${
+                      buttonStates.marketOrder ? "text-white" : "text-[#676767]"
+                    } font-normal font-inter`}
+                  >
+                    Market order
+                  </p>
+                </button>
+              </div>
+              {/* size */}
+              <div className="w-full flex flex-col gap-1">
+                <p className="text-[12px] font-normal text-th-fkg-4">Size</p>
+                <div className="w-full h-[40px] grid grid-cols-[3fr,1fr] bg-th-bkg-3">
+                  <input
+                    id="coinPrice"
+                    name="coinPrice"
+                    value="1,250,000.0000"
+                    className="w-full h-full px-4 bg-th-bkg-3 focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
+                  />
+                  <button className="w-full flex justify-center items-center gap-2 bg-[#2E3838] rounded-md">
+                    <Icons.SolapeCoin />
+                    <p className="text-[12px] font-normal font-inter text-white">
+                      SOLAPE
+                    </p>
+                  </button>
+                </div>
+              </div>
+              {/* in dollar */}
+              <div className="w-full flex flex-col">
+                <div className="w-full h-[40px] grid grid-cols-[3fr,1fr]">
+                  <input
+                    id="coinPrice"
+                    name="coinPrice"
+                    value="675,265.5000"
+                    className="w-full h-full px-4 bg-th-bkg-3 focus:outline-none rounded-l-md text-[12px] text-white font-inter font-normal"
+                  />
+                  <button className="w-full flex justify-center items-center gap-2 bg-[#2E3838] rounded-md">
+                    <Icons.UsdCoin />
+                    <p className="text-[12px] font-normal font-inter text-white">
+                      SOLAPE
+                    </p>
+                  </button>
+                </div>
+              </div>
+              {/* percentages */}
+              <div className="w-full grid grid-cols-4 gap-1 h-[24px] bg-[#2E3838] rounded-md mt-2 p-1">
+                {percentageButtons.map((item, index) => {
+                  return (
+                    <button
+                      onClick={() => handlePercentageButtonClick(index)}
+                      key={index}
+                      className={`w-full rounded-md flex justify-center items-center text-[10px] font-inter font-normal ${
+                        item.state
+                          ? "text-white bg-th-bkg-3"
+                          : "text-white/50 bg-th-bkg-3"
+                      }`}
+                    >
+                      {item.percent}
+                    </button>
+                  );
+                })}
+              </div>
+              {/* connect wallet button */}
+              <div className="w-full mt-2">
+                <FillButton
+                  text="Connect wallet"
+                  styles="w-full connectWalletShadow h-[40px] text-white"
+                />
+              </div>
+            </div>
+          </div>
+          {/* recent trades ---------> */}
+          <div className="w-full flex flex-col bg-th-bkg-4 px-4 py-5 rounded-md">
+            <p className="text-[14px] text-center font-inter font-normal text-white">
+              Recent Trades
+            </p>
+            {/* table -------->  */}
+            <div className="w-full flex flex-col gap-3 mt-5">
+              {/* table column --> */}
+              <div className="w-full grid grid-cols-[1.5fr,1.5fr,1fr,1fr]">
+                {/* ist col label */}
+                <div className="w-full flex justify-start items-center">
+                  <p className="text-[14px] font-normal text-th-fkg-4">
+                    Price (USDC)
+                  </p>
+                </div>
+                {/* 2nd col label */}
+                <div className="w-full flex justify-end items-center">
+                  <p className="text-[14px] font-normal text-th-fkg-4">
+                    Size (SOLAPE)
+                  </p>
+                </div>
+                {/* 3rd col label */}
+                <div className="w-full flex justify-end items-center">
+                  <p className="text-[14px] font-normal text-th-fkg-4">Tx</p>
+                </div>
+                {/* 4rth col label */}
+                <div className="w-full flex justify-end items-center">
+                  <p className="text-[14px] font-normal text-th-fkg-4">Time</p>
+                </div>
+              </div>
+              {/* table rows --> */}
+              <div className="w-full max-h-[285px] overflow-auto flex flex-col gap-2 hideScrollBar">
+                {Data.dexData.recentTradesData.map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className="w-full grid grid-cols-[1.5fr,1.5fr,1fr,1fr]"
+                    >
+                      {/* price */}
+                      <div className="w-full flex justify-start items-center">
+                        <p className="text-[14px] text-[#0AD171] font-normal font-inter">
+                          {item.price}
+                        </p>
+                      </div>
+                      {/* size */}
+                      <div className="w-full flex justify-end items-center">
+                        <p className="text-[14px] text-white font-normal font-inter">
+                          {item.size}
+                        </p>
+                      </div>
+                      {/* tx */}
+                      <div className="w-full flex justify-end items-center">
+                        <Icons.Link />
+                      </div>
+                      {/* time */}
+                      <div className="w-full flex justify-end items-center">
+                        <p className="text-[14px] text-white font-normal font-inter">
+                          {item.time}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </WideWrapper>
   );
 };
-
-const socialIcons = [
-  <AiOutlineTwitter className="text-[16px] text-black" />,
-  <FaTelegramPlane className="text-[16px] text-black" />,
-  <BsDiscord className="text-[16px] text-black" />,
-];
 
 export default Dex;
