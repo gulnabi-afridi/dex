@@ -9,9 +9,9 @@ import AccountsWidget from "@/components/Dex/AccountsWidget";
 import ConnectWalletWidget from "@/components/Dex/ConnectWalletWidget";
 import RecentTradesTable from "@/components/Dex/RecentTradesTable";
 import * as Icons from "../../SVG/Icons";
-import Link from "next/link";
 import Image from "next/image";
 import Slider from "react-slick";
+import BasicTabs from "@/components/Dex/CustomTabPanel/CustomTabPanel";
 
 const Dex = () => {
   // states ------------->
@@ -199,6 +199,10 @@ const Dex = () => {
           <ConnectWalletWidget />
           {/* recent trades ---------> */}
           <RecentTradesTable />
+        </div>
+        {/* open orders + recent trade history + balacnces + free dicounts ------------------> */}
+        <div className="w-full">
+          <BasicTabs />
         </div>
       </div>
     </WideWrapper>
