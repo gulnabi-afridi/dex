@@ -139,3 +139,18 @@ iframe {
 }
 
 /* react slick styles ends here */
+
+/* tabs custom styles */
+.MuiButtonBase-root {
+  color: #676767 !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  font-size: 14px !important;
+}
+.MuiButtonBase-root[aria-selected="true"] {
+  color: #5d5fef !important;
+}
+.MuiTabs-indicator {
+  background-color: #5d5fef !important;
+  height: 2px !important;
+}
