@@ -50,6 +50,7 @@ export default function BasicTabs() {
           {activeTab.map((item, index) => {
             return (
               <button
+                key={index}
                 onClick={() => handleToggleTab(index)}
                 className={`text-base  font-inter capitalize  tracking-wide ${
                   item.active

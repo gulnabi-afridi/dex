@@ -57,7 +57,7 @@ const OrderBookWidget = () => {
       <div className="w-full max-h-[240px] overflow-auto flex flex-col hideScrollBar">
         {Data.dexData.orderBookRowData.map((item, index) => {
           return (
-            <div className="w-full min-h-[30px] grid grid-cols-2">
+            <div key={index} className="w-full min-h-[30px] grid grid-cols-2">
               {/* size 1 + price 1 portion ----> */}
               <div className="w-full h-full grid grid-cols-2 relative">
                 {/* size value --> */}

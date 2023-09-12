@@ -10,6 +10,7 @@ const OpenOrders = () => {
         {tableColumnData.map((item, index) => {
           return (
             <div
+              key={index}
               className={`w-full flex ${
                 tableColumnData.length === index + 1
                   ? "justify-end"
