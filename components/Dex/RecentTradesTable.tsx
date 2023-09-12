@@ -34,7 +34,7 @@ const RecentTradesTable = () => {
           </div>
         </div>
         {/* table rows --> */}
-        <div className="w-full max-h-[285px] overflow-auto flex flex-col gap-2 hideScrollBar">
+        <div className="w-full max-h-[290px] overflow-auto flex flex-col gap-2 hideScrollBar">
           {Data.dexData.recentTradesData.map((item, index) => {
             return (
               <div
