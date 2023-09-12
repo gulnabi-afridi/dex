@@ -1,31 +1,95 @@
 import React, { useState } from "react";
-import { Tab, Tabs, Box } from "@mui/material";
+import OpenOrders from "./TabsComponent/OpenOrders";
+import { Checkbox, FormControlLabel } from "@mui/material";
 
 export default function BasicTabs() {
-  const [value, setValue] = useState(0);
+  // states ----------------------->
+  const [activeTab, setActiveTab] = useState([
+    {
+      active: true,
+      name: "open orders",
+    },
+    {
+      active: false,
+      name: "Recent Trade History",
+    },
+    {
+      active: false,
+      name: "Balances",
+    },
+    {
+      active: false,
+      name: "Fee discounts",
+    },
+  ]);
+  const [shopOnlyThisMarket, setShopOnlyThisMarket] = useState(false);
 
-  const handleChange = (event: any, newValue: any) => {
-    setValue(newValue);
+  // states ends here ---------------->
+
+  // methods ------------------->
+
+  const handleToggleTab = (selectedTab: number) => {
+    setActiveTab((prevTabs) =>
+      prevTabs.map((tab, index) => {
+        if (index === selectedTab) {
+          return { ...tab, active: true };
+        } else {
+          return { ...tab, active: false };
+        }
+      })
+    );
   };
 
+  // methods ends here --------------->
+
   return (
-    <>
-      <Box sx={{ width: "100%" }}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-          >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
-          </Tabs>
-        </Box>
-        {value === 0 && <p className="text-white text-[30px]">one</p>}
-        {value === 1 && <p className="text-white text-[30px]">two</p>}
-        {value === 2 && <p className="text-white text-[30px]">three</p>}
-      </Box>
-    </>
+    <div className="w-full flex flex-col justify-between items-center bg-[#121616] mt-4 p-5 rounded-md mb-16">
+      <div className="w-full flex justify-between items-center">
+        {/* tabs portion ------> */}
+        <div className="flex justify-center items-center gap-10">
+          {activeTab.map((item, index) => {
+            return (
+              <button
+                onClick={() => handleToggleTab(index)}
+                className={`text-base  font-inter capitalize  tracking-wide ${
+                  item.active
+                    ? "border-b-[3px] h-[37px] border-[#FF810A] text-[#FF810A] font-medium "
+                    : "text-[#676767] font-medium"
+                } `}
+              >
+                {item.name}
+              </button>
+            );
+          })}
+        </div>
+        {/* shop only this market filter -------->  */}
+        <div className="">
+          <FormControlLabel
+            control={
+              <Checkbox
+                size="small"
+                checked={shopOnlyThisMarket}
+                onChange={(e: any) => setShopOnlyThisMarket(e.target.checked)}
+                sx={{
+                  "& .MuiSvgIcon-root": {
+                    fill: "#ff810a",
+                  },
+                }}
+              />
+            }
+            label="Show only this market"
+            sx={{
+              "& .MuiFormControlLabel-label": {
+                fontSize: "14px",
+                fontWeight: 500,
+                color: "#676767",
+              },
+            }}
+          />
+        </div>
+      </div>
+      {/* tabs component --------> */}
+      {activeTab[0].active && <OpenOrders />}
+    </div>
   );
 }
