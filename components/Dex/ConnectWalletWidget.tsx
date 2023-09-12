@@ -206,7 +206,7 @@ const ConnectWalletWidget = () => {
           })}
         </div>
         {/* connect wallet button */}
-        <div className="w-full mt-2">
+        <div className="w-full mt-4">
           <FillButton
             text="Connect wallet"
             styles="w-full connectWalletShadow h-[40px] text-white"
