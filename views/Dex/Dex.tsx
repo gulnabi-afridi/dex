@@ -12,6 +12,7 @@ import * as Icons from "../../SVG/Icons";
 import Image from "next/image";
 import Slider from "react-slick";
 import BasicTabs from "@/components/Dex/CustomTabPanel/CustomTabPanel";
+import OrderBookWidget from "@/components/Dex/OrderBookWidget";
 
 const Dex = () => {
   // states ------------->
@@ -194,7 +195,9 @@ const Dex = () => {
         {/* order book + connect wallet + recent trades ------------------------> */}
         <div className="w-full grid grid-cols-3 gap-3 mt-3">
           {/* order book --------->  */}
-          <div className="w-full"></div>
+          <div className="w-full">
+            <OrderBookWidget />
+          </div>
           {/* connect wallet --------->  */}
           <ConnectWalletWidget />
           {/* recent trades ---------> */}
