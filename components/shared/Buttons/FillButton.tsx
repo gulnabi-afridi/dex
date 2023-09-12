@@ -15,7 +15,7 @@ const FillButton = ({
 }: Props) => {
   return (
     <button
-      className={`flex justify-center leading-0 items-center gap-2 rounded-[6px] ${styles}`}
+      className={`flex justify-center leading-0 items-center gap-2 rounded-[6px] hover:opacity-80 ${styles}`}
     >
       {icon}
       {text}

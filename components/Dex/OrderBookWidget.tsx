@@ -55,7 +55,7 @@ const OrderBookWidget = () => {
       </div>
       {/* rows --------> */}
       <div className="w-full max-h-[240px] overflow-auto flex flex-col hideScrollBar">
-        {Data.dexData.orderBookRowData.map((item, index) => {
+        {orderBookRowData.map((item, index) => {
           return (
             <div key={index} className="w-full min-h-[30px] grid grid-cols-2">
               {/* size 1 + price 1 portion ----> */}
@@ -74,7 +74,7 @@ const OrderBookWidget = () => {
                 </div>
                 {/* indicator  */}
                 <div
-                  className={`${item.portion1Width} absolute right-0 top-0 h-full bg-[#06894A]`}
+                  className={`${item?.portion1Width} absolute right-0 top-0 h-full bg-[#06894A]`}
                 ></div>
               </div>
               {/* size 2 + price 2 portion ----> */}
@@ -115,5 +115,104 @@ const OrderBookWidget = () => {
     </div>
   );
 };
+
+const orderBookRowData = [
+  {
+    size1: "1,425,249.5524",
+    price1: "0.5042",
+    price2: "0.5033",
+    size2: "1,100,040.4559",
+    portion1Width: "w-[0%]",
+    portion2Width: "w-[0%]",
+  },
+  {
+    size1: "1,425,249.5524",
+    price1: "0.5042",
+    price2: "0.5033",
+    size2: "1,100,040.4559",
+    portion1Width: "w-[2%]",
+    portion2Width: "w-[2%]",
+  },
+  {
+    size1: "1,425,249.5524",
+    price1: "0.5042",
+    price2: "0.5033",
+    size2: "1,100,040.4559",
+    portion1Width: "w-[2%]",
+    portion2Width: "w-[2%]",
+  },
+  {
+    size1: "1,425,249.5524",
+    price1: "0.5042",
+    price2: "0.5033",
+    size2: "1,100,040.4559",
+    portion1Width: "w-[4%]",
+    portion2Width: "w-[2%]",
+  },
+  {
+    size1: "5,442,555.4444",
+    price1: "0.5041",
+    price2: "0.5021",
+    size2: "800,000.4499",
+    portion1Width: "w-[7%]",
+    portion2Width: "w-[10%]",
+  },
+  {
+    size1: "271,240.0902",
+    price1: "0.5036",
+    price2: "0.4982",
+    size2: "11,000.4155",
+    portion1Width: "w-[7%]",
+    portion2Width: "w-[10%]",
+  },
+  {
+    size1: "5,000.0022",
+    price1: "0.5028",
+    price2: "0.4981",
+    size2: "8,000.6670",
+    portion1Width: "w-[10%]",
+    portion2Width: "w-[15%]",
+  },
+  {
+    size1: "2,000.0000",
+    price1: "0.5022",
+    price2: "0.4888",
+    size2: "5,000.3333",
+    portion1Width: "w-[30%]",
+    portion2Width: "w-[20%]",
+  },
+  {
+    size1: "100.0000",
+    price1: "0.4902",
+    price2: "0.4621",
+    size2: "557.0042",
+    portion1Width: "w-[40%]",
+    portion2Width: "w-[25%]",
+  },
+  {
+    size1: "20.0000",
+    price1: "0.4902",
+    price2: "0.4621",
+    size2: "11.0112",
+    portion1Width: "w-[50%]",
+    portion2Width: "w-[30%]",
+  },
+  {
+    size1: "20.0000",
+    price1: "0.4902",
+    price2: "0.4621",
+    size2: "11.0112",
+    portion1Width: "w-[60%]",
+    portion2Width: "w-[50%]",
+  },
+  {
+    size1: "20.0000",
+    price1: "0.4902",
+    price2: "0.4621",
+    size2: "11.0112",
+    portion1Width: "w-[70%]",
+    portion2Width: "w-[60%]",
+  },
+];
 
 export default OrderBookWidget;
