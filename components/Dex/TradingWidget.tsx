@@ -19,9 +19,7 @@ const TradingWidget = () => {
                 show: false,
               },
               indicator: {
-                tooltip: {
-                  showRule: "none",
-                },
+                tooltip: {},
                 lines: [],
               },
               separator: {
