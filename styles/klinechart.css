@@ -1,0 +1,41 @@
+.klinecharts-pro-watermark {
+  display: none !important;
+}
+.tools {
+  display: none !important;
+}
+.klinecharts-pro-period-bar {
+  border-bottom: none !important;
+}
+.klinecharts-pro-drawing-bar {
+  border-right: none !important;
+}
+.menu-container {
+  border-right: none !important;
+}
+.symbol {
+  border-right: none !important;
+}
+.split-line {
+  display: none !important;
+}
+.klinecharts-pro-period-bar .item.selected {
+  color: white !important;
+  background-color: #e06c00 !important;
+  border: 2px solid #e06c00 !important;
+  border-radius: 8px !important;
+}
+.menu-container svg {
+  fill: #e06c00 !important;
+}
+.period {
+  color: #676767 !important;
+  background-color: #1c2222 !important;
+  border-radius: 8px !important;
+}
+.symbol span {
+  color: #e06c00 !important;
+}
+.klinecharts-pro-widget > div > div:nth-child(2) {
+  display: none !important;
+}
