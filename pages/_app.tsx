@@ -3,6 +3,8 @@ import "@/styles/globals.css";
 import "@/styles/drawer.css";
 import "@/styles/faq.css";
 import "@/styles/pagination.css";
+import "@/styles/klinechart.css";
+
 import type { AppProps } from "next/app";
 import Layout from "@/layout/Layout";
 import { ThemeProvider } from "next-themes";
