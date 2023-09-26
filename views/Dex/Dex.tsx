@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import WideWrapper from "@/components/shared/ComponentWrapper/WideWrapper";
 import { HiOutlineStar } from "react-icons/hi";
 import { BsChevronDown, BsUbuntu } from "react-icons/bs";
@@ -13,6 +13,7 @@ import Image from "next/image";
 import Slider from "react-slick";
 import BasicTabs from "@/components/Dex/CustomTabPanel/CustomTabPanel";
 import OrderBookWidget from "@/components/Dex/OrderBookWidget";
+import TradingWidget from "@/components/Dex/TradingWidget";
 
 const Dex = () => {
   // states ------------->
@@ -179,10 +180,8 @@ const Dex = () => {
         {/* trading panel + assets information + accounts section ----------------> */}
         <div className="w-full h-[100vh-164px] grid gap-3 grid-cols-[2.5fr,1fr]">
           {/* trading panel  */}
-          <div className="w-full h-full bg-th-bkg-4 flex justify-center items-center rounded-md">
-            <p className="text-[40px] font-bold font-inter uppercase text-white/70">
-              Trading Engine
-            </p>
+          <div className="w-full h-full bg-th-bkg-4 rounded-md">
+            <TradingWidget />
           </div>
           {/* assets information + accounts section ----> */}
           <div className="w-full flex flex-col gap-3">
