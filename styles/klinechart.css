@@ -39,3 +39,6 @@
 .klinecharts-pro-widget > div > div:nth-child(2) {
   display: none !important;
 }
+.klinecharts-pro-content {
+  font-family: "Inter", "sans-serif";
+}
